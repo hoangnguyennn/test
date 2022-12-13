@@ -3,10 +3,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .spacer-48 {
   margin-top: 48px;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
+.text-center {
+  text-align: center;
 }
