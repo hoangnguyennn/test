@@ -15,7 +15,7 @@ import mapImg from '~/assets/images/pin_map.png'
 <template>
   <div class="about-us spacer-48">
     <div class="title-and-description">
-      <h3 class="title">About us</h3>
+      <h3 class="title">About Us</h3>
       <p class="description">
         Browse our selection of free online games and have a great time without
         leaving the site! Our Kids Games option also includes game reviews,
@@ -114,6 +114,7 @@ import mapImg from '~/assets/images/pin_map.png'
     padding-right: 16px;
 
     .title {
+      height: 59px;
       font-family: 'Playfair Display';
       font-size: 40px;
       font-weight: 900;
@@ -123,6 +124,7 @@ import mapImg from '~/assets/images/pin_map.png'
     }
 
     .description {
+      margin-top: 16px;
       color: #757575;
       font-size: 14px;
       font-weight: 400;
@@ -132,6 +134,7 @@ import mapImg from '~/assets/images/pin_map.png'
 
   .statistics {
     display: flex;
+    margin-top: 40px;
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 40px;

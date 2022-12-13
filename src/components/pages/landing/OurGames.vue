@@ -146,6 +146,7 @@ const ourGames2 = ourGames.slice(6)
     }
 
     .description {
+      margin-top: 16px;
       color: #757575;
       font-size: 14px;
       font-weight: 400;
@@ -154,6 +155,7 @@ const ourGames2 = ourGames.slice(6)
   }
 
   .games {
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
 

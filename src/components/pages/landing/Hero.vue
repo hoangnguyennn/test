@@ -77,7 +77,7 @@ watch(isShow, (newValue) => {
 
     <div class="hero-wrap">
       <div class="hero-title">
-        We're <br />
+        We’re&nbsp;<br />
         Getting Ready
       </div>
 
@@ -159,6 +159,10 @@ watch(isShow, (newValue) => {
       height: 40px;
     }
 
+    .menu-mobile {
+      display: flex;
+    }
+
     .menu {
       position: fixed;
       top: 0;
@@ -219,6 +223,7 @@ watch(isShow, (newValue) => {
 
   &-countdown {
     margin-top: 38px;
+    padding: 24px 26px;
     height: 118px;
     background-color: #fff;
     border-radius: 21px;
@@ -233,9 +238,9 @@ watch(isShow, (newValue) => {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #000;
 
       span:nth-child(1) {
+        height: 46px;
         font-family: 'Playfair Display';
         font-size: 36px;
         font-weight: 900;
@@ -244,17 +249,28 @@ watch(isShow, (newValue) => {
       }
 
       span:nth-child(2) {
+        margin-top: 3px;
+        height: 18px;
         font-size: 12px;
         font-weight: 700;
         line-height: 15px;
-        letter-spacing: -0.651724px;
+        letter-spacing: -0.65px;
+      }
+
+      &:last-child {
+        margin-right: 3px;
       }
 
       &-divider {
+        margin-left: 4px;
+        margin-right: 4px;
         width: 16px;
         font-size: 40px;
         line-height: 49px;
-        letter-spacing: -0.651724px;
+        letter-spacing: -0.65px;
+        display: flex;
+        align-content: center;
+        text-align: center;
       }
     }
   }
@@ -272,6 +288,7 @@ watch(isShow, (newValue) => {
     }
 
     .news-letter-input {
+      margin-top: 16px;
       position: relative;
 
       input {
@@ -280,6 +297,9 @@ watch(isShow, (newValue) => {
         height: 56px;
         background-color: #fff;
         color: #545454;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
         border: none;
         border-radius: 8px;
       }
