@@ -25,12 +25,10 @@ const handleScroll = () => {
 }
 
 onMounted(() => {
-  console.log('mounted')
   document.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
-  console.log('unmounted')
   document.removeEventListener('scroll', handleScroll)
 })
 </script>

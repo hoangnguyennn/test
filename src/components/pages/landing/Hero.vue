@@ -7,12 +7,16 @@ export default {
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
+import CaretDown from '~/assets/images/caret_down.svg?component'
+import CloseIcon from '~/assets/images/close.svg?component'
+import Email from '~/components/common/Email.vue'
+import heroImg from '~/assets/images/hero_bg.jfif'
 import LogoImg from '~/assets/images/logo_mobile.svg?component'
 import MenuIcon from '~/assets/images/menu.svg?component'
-import CloseIcon from '~/assets/images/close.svg?component'
 import ongTienImg from '~/assets/images/ong_tien_1.png'
-import heroImg from '~/assets/images/hero_bg.jfif'
-import Email from '~/components/common/Email.vue'
+import TheUSFlagImg from '~/assets/images/us_flag.svg?component'
+import TickIcon from '~/assets/images/tick.svg?component'
+import VietnamFlagImg from '~/assets/images/vietnam_flag.svg?component'
 
 const menuItems = [
   {
@@ -33,9 +37,10 @@ const menuItems = [
   }
 ]
 
-const isShow = ref(false)
+const isShowMenu = ref(true)
+const isShowLanguageOptions = ref(false)
 
-watch(isShow, (newValue) => {
+watch(isShowMenu, (newValue) => {
   if (newValue) {
     document.body.style.overflow = 'hidden'
   } else {
@@ -67,13 +72,42 @@ watch(isShow, (newValue) => {
       </div>
 
       <div class="menu-mobile">
-        <MenuIcon @click="isShow = true" />
+        <MenuIcon @click="isShowMenu = true" />
 
-        <div v-if="isShow" class="menu">
+        <div v-if="isShowMenu" class="menu">
           <div class="menu-top">
-            <div class="languages"></div>
+            <div class="languages">
+              <div class="placeholder" @click="isShowLanguageOptions = true">
+                <div class="flag">
+                  <TheUSFlagImg />
+                </div>
+                <div class="caret">
+                  <CaretDown />
+                </div>
+              </div>
+              <div class="language-options" v-if="isShowLanguageOptions">
+                <div class="option" @click="isShowLanguageOptions = false">
+                  <div class="checkbox">
+                    <TickIcon />
+                  </div>
+                  <div class="flag">
+                    <VietnamFlagImg />
+                  </div>
+                  <div class="name">Vietnamese</div>
+                </div>
+                <div class="option" @click="isShowLanguageOptions = false">
+                  <div class="checkbox">
+                    <TickIcon />
+                  </div>
+                  <div class="flag">
+                    <TheUSFlagImg />
+                  </div>
+                  <div class="name">English</div>
+                </div>
+              </div>
+            </div>
             <div class="menu-close">
-              <CloseIcon @click="isShow = false" />
+              <CloseIcon @click="isShowMenu = false" />
             </div>
           </div>
           <div class="menu-content">
@@ -82,7 +116,7 @@ watch(isShow, (newValue) => {
               :key="index"
               :href="menuItem.link"
               class="menu-item"
-              @click="isShow = false"
+              @click="isShowMenu = false"
             >
               {{ menuItem.label }}
             </a>
@@ -229,6 +263,60 @@ watch(isShow, (newValue) => {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+
+        .languages {
+          position: relative;
+
+          .placeholder {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #afafaf;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .flag,
+            .caret {
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          .language-options {
+            position: absolute;
+            top: 100%;
+            padding-left: 10px;
+            padding-right: 6px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+
+            .option {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+
+              .checkbox,
+              .flag {
+                display: flex;
+              }
+
+              .flag {
+                margin-left: 8px;
+              }
+
+              .name {
+                margin-left: 4px;
+              }
+
+              &:not(:first-child) {
+                border-top: 1px solid #c4c4c4;
+              }
+            }
+          }
+        }
       }
 
       &-content {

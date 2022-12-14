@@ -5,7 +5,6 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
 import ArrowRightIcon from '~/assets/images/arrow_right.svg?component'
 
 const VARIANTS: { [variant: string]: string } = {
