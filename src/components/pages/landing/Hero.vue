@@ -11,12 +11,16 @@ import CaretDown from '~/assets/images/caret_down.svg?component'
 import CloseIcon from '~/assets/images/close.svg?component'
 import Email from '~/components/common/Email.vue'
 import heroImg from '~/assets/images/hero_bg.jfif'
-import LogoImg from '~/assets/images/logo_mobile.svg?component'
+import LogoMobileImg from '~/assets/images/logo_mobile.svg?component'
+import LogoPCImg from '~/assets/images/logo.svg?component'
 import MenuIcon from '~/assets/images/menu.svg?component'
 import ongTienImg from '~/assets/images/ong_tien_1.png'
 import TheUSFlagImg from '~/assets/images/us_flag.svg?component'
 import TickIcon from '~/assets/images/tick.svg?component'
 import VietnamFlagImg from '~/assets/images/vietnam_flag.svg?component'
+import useMobile from '~/hooks/useMobile'
+
+const { isMobile } = useMobile()
 
 const menuItems = [
   {
@@ -37,7 +41,7 @@ const menuItems = [
   }
 ]
 
-const isShowMenu = ref(true)
+const isShowMenu = ref(false)
 const isShowLanguageOptions = ref(false)
 
 watch(isShowMenu, (newValue) => {
@@ -67,11 +71,17 @@ watch(isShowMenu, (newValue) => {
     </div>
 
     <div class="hero-navbar">
-      <div class="logo-mobile">
-        <LogoImg />
+      <div class="logo-pc" v-if="!isMobile">
+        <LogoPCImg />
       </div>
 
-      <div class="menu-mobile">
+      <div class="menu-pc" v-if="!isMobile"></div>
+
+      <div class="logo-mobile" v-if="isMobile">
+        <LogoMobileImg />
+      </div>
+
+      <div class="menu-mobile" v-if="isMobile">
         <MenuIcon @click="isShowMenu = true" />
 
         <div v-if="isShowMenu" class="menu">
@@ -127,7 +137,7 @@ watch(isShowMenu, (newValue) => {
 
     <div class="hero-wrap">
       <div class="hero-title">
-        We’re&nbsp;<br />
+        We’re&nbsp;<br v-if="isMobile" />
         Getting Ready
       </div>
 
@@ -437,6 +447,7 @@ watch(isShowMenu, (newValue) => {
     margin-right: 16px;
     height: 258px;
     position: relative;
+    display: flex;
     overflow: hidden;
 
     img {
@@ -445,6 +456,125 @@ watch(isShowMenu, (newValue) => {
       bottom: -14px;
       width: 351px;
       height: 351px;
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .hero {
+    height: 1018px;
+
+    .background {
+      height: 100%;
+
+      .box-1 {
+        .box-2 {
+          height: 988px;
+
+          .box-3 {
+            width: 4895px;
+            height: 4895px;
+
+            .box-4 {
+              width: 1920px;
+              height: 1083px;
+            }
+          }
+        }
+      }
+    }
+
+    &-navbar {
+      padding: 0 80px 0 79px;
+      height: 162px;
+      align-items: flex-start;
+
+      .logo-pc {
+        height: 64px;
+        margin-top: 20px;
+      }
+    }
+
+    &-wrap {
+      margin-top: 132px;
+      padding-top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-title {
+      font-size: 80px;
+      line-height: 120px;
+    }
+
+    &-countdown {
+      margin-top: 21px;
+      width: 756px;
+
+      .time {
+        width: 54px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span:nth-child(1) {
+          height: 80px;
+          font-size: 60px;
+          line-height: 64px;
+        }
+
+        span:nth-child(2) {
+          margin-top: 0;
+          height: 18.9px;
+          font-size: 15.64px;
+          line-height: 19px;
+        }
+
+        &:last-child {
+          margin-right: 3px;
+        }
+
+        &-divider {
+          margin-left: 52px;
+          margin-right: 52px;
+          width: 16px;
+          height: 94px;
+          font-size: 65.17px;
+          line-height: 79.45px;
+        }
+      }
+    }
+
+    &-content {
+      margin-top: 97px;
+      width: 560px;
+
+      .news-letter-text {
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: normal;
+      }
+
+      .news-letter-input {
+        margin-top: 32px;
+      }
+    }
+
+    &-fairy {
+      margin: 0;
+      width: 938px;
+      height: 938px;
+      position: absolute;
+      left: -89px;
+      top: 85px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+      }
     }
   }
 }
