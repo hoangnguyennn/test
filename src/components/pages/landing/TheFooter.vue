@@ -132,7 +132,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
       .text {
         font-size: 14px;
         font-weight: 400;
-        line-height: 140%;
+        line-height: 20px;
 
         p:not(:first-child) {
           margin-top: 12px;
@@ -156,7 +156,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
         color: #545454;
         font-size: 14px;
         font-weight: 400;
-        line-height: 140%;
+        line-height: 20px;
         border: 1px solid #ffffff;
         border-radius: 8px;
       }

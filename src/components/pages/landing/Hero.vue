@@ -12,6 +12,7 @@ import menuIcon from '~/assets/images/menu.svg'
 import closeIcon from '~/assets/images/close.svg'
 import arrowRightIcon from '~/assets/images/arrow_right.svg'
 import ongTienImg from '~/assets/images/ong_tien_1.png'
+import heroImg from '~/assets/images/hero_bg.jfif'
 
 const menuItems = [
   {
@@ -45,7 +46,21 @@ watch(isShow, (newValue) => {
 
 <template>
   <div class="hero">
-    <div class="background"></div>
+    <div class="background">
+      <div class="box-1">
+        <div class="box-2">
+          <div class="box-3">
+            <div
+              class="box-4"
+              :style="{
+                backgroundImage: `linear-gradient(180deg, rgba(0, 10, 255, 0.5) 0%, rgba(0, 0, 0, 0) 41.57%), url(${heroImg})`
+              }"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="hero-navbar">
       <div class="logo-mobile">
         <img :src="logoImg" alt="" />
@@ -138,8 +153,46 @@ watch(isShow, (newValue) => {
     left: 0;
     right: 0;
     height: 608px;
-    background-color: purple;
     z-index: -1;
+    overflow: hidden;
+
+    .box-1 {
+      .box-2 {
+        width: 100%;
+        height: 608px;
+        overflow: hidden;
+        background: radial-gradient(
+          27.72% 27.79% at 50.81% 68.15%,
+          #210544 0%,
+          rgba(23, 5, 68, 0.71) 50.52%,
+          rgba(23, 5, 68, 0) 100%
+        );
+        backdrop-filter: blur(5px);
+
+        .box-3 {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 3000px;
+          height: 3000px;
+          border-radius: 50%;
+          overflow: hidden;
+          z-index: -1;
+
+          .box-4 {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1184px;
+            height: 668px;
+            background-size: cover;
+            background-position: center;
+          }
+        }
+      }
+    }
   }
 
   &-navbar {
@@ -208,7 +261,7 @@ watch(isShow, (newValue) => {
   }
 
   &-wrap {
-    padding: 24px 16px;
+    padding: 24px 16px 0 16px;
   }
 
   &-title {
@@ -299,7 +352,7 @@ watch(isShow, (newValue) => {
         color: #545454;
         font-size: 14px;
         font-weight: 400;
-        line-height: 140%;
+        line-height: 20px;
         border: none;
         border-radius: 8px;
       }
@@ -317,8 +370,17 @@ watch(isShow, (newValue) => {
     margin-top: 11px;
     margin-left: 17px;
     margin-right: 16px;
+    height: 258px;
     position: relative;
-    text-align: right;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 39px;
+      bottom: -14px;
+      width: 351px;
+      height: 351px;
+    }
   }
 }
 </style>

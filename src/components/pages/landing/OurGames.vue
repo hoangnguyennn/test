@@ -150,7 +150,7 @@ const ourGames2 = ourGames.slice(6)
       color: #757575;
       font-size: 14px;
       font-weight: 400;
-      line-height: 140%;
+      line-height: 20px;
     }
   }
 

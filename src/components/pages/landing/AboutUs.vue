@@ -128,7 +128,7 @@ import mapImg from '~/assets/images/pin_map.png'
       color: #757575;
       font-size: 14px;
       font-weight: 400;
-      line-height: 140%;
+      line-height: 20px;
     }
   }
 
@@ -208,7 +208,7 @@ import mapImg from '~/assets/images/pin_map.png'
             color: #757575;
             font-size: 14px;
             font-weight: 400;
-            line-height: 140%;
+            line-height: 20px;
           }
         }
 
