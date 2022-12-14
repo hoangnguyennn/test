@@ -82,6 +82,7 @@ watch(isShow, (newValue) => {
               :key="index"
               :href="menuItem.link"
               class="menu-item"
+              @click="isShow = false"
             >
               {{ menuItem.label }}
             </a>

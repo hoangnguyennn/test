@@ -16,7 +16,11 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
 </script>
 
 <template>
-  <div class="footer" :style="{ backgroundImage: `url(${footerImg})` }">
+  <div
+    id="contact-us"
+    class="footer"
+    :style="{ backgroundImage: `url(${footerImg})` }"
+  >
     <div class="logo-and-social-media">
       <div class="logo">
         <img :src="logoImg" alt="" />

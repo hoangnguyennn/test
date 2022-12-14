@@ -13,7 +13,7 @@ import mapImg from '~/assets/images/pin_map.png'
 </script>
 
 <template>
-  <div class="about-us spacer-48">
+  <div id="about-us" class="about-us spacer-48">
     <div class="title-and-description">
       <h3 class="title">About Us</h3>
       <p class="description">
