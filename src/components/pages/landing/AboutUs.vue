@@ -162,11 +162,16 @@ import mapImg from '~/assets/images/pin_map.png'
       }
 
       .description {
+        margin-top: 4px;
         color: #000;
         font-size: 24px;
         font-weight: 700;
         line-height: 30px;
         width: 164px;
+      }
+
+      &:not(:first-child) {
+        margin-left: 16px;
       }
     }
   }
@@ -198,6 +203,7 @@ import mapImg from '~/assets/images/pin_map.png'
           flex: 1;
 
           .title {
+            height: 36px;
             font-size: 24px;
             font-weight: 700;
             line-height: 30px;
@@ -223,6 +229,7 @@ import mapImg from '~/assets/images/pin_map.png'
     padding-top: 40px;
 
     .witch {
+      display: flex;
       padding-left: 42px;
       padding-right: 33px;
 
@@ -232,6 +239,7 @@ import mapImg from '~/assets/images/pin_map.png'
 
     .map {
       margin-top: -31px;
+      display: flex;
     }
   }
 }

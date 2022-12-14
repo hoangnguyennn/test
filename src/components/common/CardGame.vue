@@ -37,13 +37,14 @@ const cardGameStyles = computed<StyleValue>(() => {
   width: 164px;
   height: 268px;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: flex-end;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 
   .content {
-    padding: 0 18px 11px 8px;
+    padding-bottom: 11px;
+    padding-left: 8px;
 
     .title {
       font-size: 24px;
@@ -53,6 +54,7 @@ const cardGameStyles = computed<StyleValue>(() => {
 
     .description {
       margin-top: 3px;
+      padding-right: 18px;
       font-size: 12px;
       font-weight: 400;
       line-height: 15px;

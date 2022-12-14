@@ -28,67 +28,67 @@ const ourGames = [
     backgroundImage: game1Img
   },
   {
-    title: 'E-Space',
+    title: 'Pirates',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game2Img
   },
   {
-    title: 'E-Space',
+    title: 'Magic tree',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game3Img
   },
   {
-    title: 'E-Space',
+    title: 'Kingland',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game4Img
   },
   {
-    title: 'E-Space',
+    title: 'Witch Party',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game5Img
   },
   {
-    title: 'E-Space',
+    title: 'Aborigines',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game6Img
   },
   {
-    title: 'E-Space',
+    title: 'The Last Game',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game7Img
   },
   {
-    title: 'E-Space',
+    title: 'Rocky',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game8Img
   },
   {
-    title: 'E-Space',
+    title: 'Cinderella',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game9Img
   },
   {
-    title: 'E-Space',
+    title: 'G-Dragon',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game10Img
   },
   {
-    title: 'E-Space',
+    title: 'Blue Fire',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game11Img
   },
   {
-    title: 'E-Space',
+    title: 'Egypt Game',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     backgroundImage: game12Img
@@ -137,6 +137,7 @@ const ourGames2 = ourGames.slice(6)
     padding-right: 16px;
 
     .title {
+      height: 59px;
       font-family: 'Playfair Display';
       font-size: 40px;
       font-weight: 900;

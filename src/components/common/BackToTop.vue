@@ -53,6 +53,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 
   .wrap {
     width: calc(5 / 6 * 100%);

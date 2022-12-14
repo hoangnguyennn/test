@@ -5,14 +5,13 @@ export default {
 </script>
 
 <script setup lang="ts">
+import logoImg from '~/assets/images/logo_mobile.png'
 import footerImg from '~/assets/images/footer_bg.png'
-import LogoImg from '~/assets/images/logo_mobile.svg?component'
 import TwitterIcon from '~/assets/images/twitter_logo.svg?component'
 import FacebookIcon from '~/assets/images/facebook_logo.svg?component'
 import LinkedinIcon from '~/assets/images/linkedin_logo.svg?component'
 import LocationIcon from '~/assets/images/location.svg?component'
 import MobileIcon from '~/assets/images/mobile.svg?component'
-import ArrowRightIcon from '~/assets/images/arrow_right.svg?component'
 import Email from '~/components/common/Email.vue'
 </script>
 
@@ -24,7 +23,7 @@ import Email from '~/components/common/Email.vue'
   >
     <div class="logo-and-social-media">
       <div class="logo">
-        <LogoImg />
+        <img :src="logoImg" alt="" />
       </div>
       <div class="social-media-list">
         <div class="social-media">
@@ -97,7 +96,7 @@ import Email from '~/components/common/Email.vue'
     .logo {
       height: 96px;
 
-      :deep(svg) {
+      img {
         height: 100%;
       }
     }
@@ -107,6 +106,10 @@ import Email from '~/components/common/Email.vue'
       width: 168px;
       display: flex;
       justify-content: space-between;
+
+      .social-media {
+        display: flex;
+      }
     }
   }
 
@@ -124,11 +127,12 @@ import Email from '~/components/common/Email.vue'
     }
 
     .block {
-      margin-top: 12px;
+      margin-top: 20px;
       display: flex;
 
       .icon {
         margin-right: 8px;
+        display: flex;
       }
 
       .text {
