@@ -7,12 +7,12 @@ export default {
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
-import logoImg from '~/assets/images/logo_mobile.svg'
-import menuIcon from '~/assets/images/menu.svg'
-import closeIcon from '~/assets/images/close.svg'
-import arrowRightIcon from '~/assets/images/arrow_right.svg'
+import LogoImg from '~/assets/images/logo_mobile.svg?component'
+import MenuIcon from '~/assets/images/menu.svg?component'
+import CloseIcon from '~/assets/images/close.svg?component'
 import ongTienImg from '~/assets/images/ong_tien_1.png'
 import heroImg from '~/assets/images/hero_bg.jfif'
+import Email from '~/components/common/Email.vue'
 
 const menuItems = [
   {
@@ -63,17 +63,17 @@ watch(isShow, (newValue) => {
 
     <div class="hero-navbar">
       <div class="logo-mobile">
-        <img :src="logoImg" alt="" />
+        <LogoImg />
       </div>
 
       <div class="menu-mobile">
-        <img :src="menuIcon" alt="" @click="isShow = true" />
+        <MenuIcon @click="isShow = true" />
 
         <div v-if="isShow" class="menu">
           <div class="menu-top">
             <div class="languages"></div>
             <div class="menu-close">
-              <img :src="closeIcon" alt="" @click="isShow = false" />
+              <CloseIcon @click="isShow = false" />
             </div>
           </div>
           <div class="menu-content">
@@ -130,10 +130,7 @@ watch(isShow, (newValue) => {
           We will back to something amazing. Getting the latest updates about
           our games. Please sign up to our newsletter.
         </p>
-        <div class="news-letter-input">
-          <input type="email" placeholder="Enter your email" />
-          <img :src="arrowRightIcon" alt="" />
-        </div>
+        <Email class="news-letter-input" />
       </div>
     </div>
 
@@ -343,27 +340,6 @@ watch(isShow, (newValue) => {
 
     .news-letter-input {
       margin-top: 16px;
-      position: relative;
-
-      input {
-        padding: 18px 38px 18px 14px;
-        width: 100%;
-        height: 56px;
-        background-color: #fff;
-        color: #545454;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        border: none;
-        border-radius: 8px;
-      }
-
-      img {
-        position: absolute;
-        right: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
     }
   }
 

@@ -6,13 +6,14 @@ export default {
 
 <script setup lang="ts">
 import footerImg from '~/assets/images/footer_bg.png'
-import logoImg from '~/assets/images/logo_mobile.svg'
-import twitterIcon from '~/assets/images/twitter_logo.svg'
-import facebookIcon from '~/assets/images/facebook_logo.svg'
-import linkedinIcon from '~/assets/images/linkedin_logo.svg'
-import locationIcon from '~/assets/images/location.svg'
-import mobileIcon from '~/assets/images/mobile.svg'
-import arrowRightIcon from '~/assets/images/arrow_right.svg'
+import LogoImg from '~/assets/images/logo_mobile.svg?component'
+import TwitterIcon from '~/assets/images/twitter_logo.svg?component'
+import FacebookIcon from '~/assets/images/facebook_logo.svg?component'
+import LinkedinIcon from '~/assets/images/linkedin_logo.svg?component'
+import LocationIcon from '~/assets/images/location.svg?component'
+import MobileIcon from '~/assets/images/mobile.svg?component'
+import ArrowRightIcon from '~/assets/images/arrow_right.svg?component'
+import Email from '~/components/common/Email.vue'
 </script>
 
 <template>
@@ -23,19 +24,19 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
   >
     <div class="logo-and-social-media">
       <div class="logo">
-        <img :src="logoImg" alt="" />
+        <LogoImg />
       </div>
       <div class="social-media-list">
         <div class="social-media">
-          <img :src="twitterIcon" alt="" />
+          <TwitterIcon />
         </div>
 
         <div class="social-media">
-          <img :src="facebookIcon" alt="" />
+          <FacebookIcon />
         </div>
 
         <div class="social-media">
-          <img :src="linkedinIcon" alt="" />
+          <LinkedinIcon />
         </div>
       </div>
     </div>
@@ -45,7 +46,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
 
       <div class="block location-block">
         <div class="icon">
-          <img :src="locationIcon" alt="" />
+          <LocationIcon />
         </div>
         <div class="text">
           <p>Valletta Buildings, South Street, Valletta - VLT 1103 Malta, US</p>
@@ -57,7 +58,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
 
       <div class="block address-block">
         <div class="icon">
-          <img :src="mobileIcon" alt="" />
+          <MobileIcon />
         </div>
         <div class="text">
           <p>(+1) 555-0108-000 or (+236) 555-0108</p>
@@ -73,10 +74,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
         </div>
       </div>
 
-      <div class="news-letter-input">
-        <input type="email" placeholder="Enter your email" />
-        <img :src="arrowRightIcon" alt="" />
-      </div>
+      <Email class="news-letter-input" variant="outline" />
     </div>
 
     <div class="info">
@@ -99,7 +97,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
     .logo {
       height: 96px;
 
-      img {
+      :deep(svg) {
         height: 100%;
       }
     }
@@ -165,7 +163,7 @@ import arrowRightIcon from '~/assets/images/arrow_right.svg'
         border-radius: 8px;
       }
 
-      img {
+      :deep(svg) {
         position: absolute;
         right: 14px;
         top: 50%;

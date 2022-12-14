@@ -5,9 +5,9 @@ export default {
 </script>
 
 <script setup lang="ts">
-import calendarTickIcon from '~/assets/images/calendar_tick.svg'
-import penToolIcon from '~/assets/images/pen_tool.svg'
-import peopleIcon from '~/assets/images/people.svg'
+import CalendarTickIcon from '~/assets/images/calendar_tick.svg?component'
+import PenToolIcon from '~/assets/images/pen_tool.svg?component'
+import PeopleIcon from '~/assets/images/people.svg?component'
 import witchImg from '~/assets/images/witch.png'
 import mapImg from '~/assets/images/pin_map.png'
 </script>
@@ -50,7 +50,7 @@ import mapImg from '~/assets/images/pin_map.png'
         <div class="benefit">
           <div class="icon">
             <div class="wrap">
-              <img :src="calendarTickIcon" alt="" />
+              <CalendarTickIcon />
             </div>
           </div>
           <div class="text">
@@ -65,7 +65,7 @@ import mapImg from '~/assets/images/pin_map.png'
         <div class="benefit">
           <div class="icon">
             <div class="wrap">
-              <img :src="penToolIcon" alt="" />
+              <PenToolIcon />
             </div>
           </div>
           <div class="text">
@@ -81,7 +81,7 @@ import mapImg from '~/assets/images/pin_map.png'
         <div class="benefit">
           <div class="icon">
             <div class="wrap">
-              <img :src="peopleIcon" alt="" />
+              <PeopleIcon />
             </div>
           </div>
           <div class="text">
