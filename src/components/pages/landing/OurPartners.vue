@@ -25,7 +25,7 @@ const partners = [
 </script>
 
 <template>
-  <div id="partners" class="our-partners spacer-48">
+  <div id="partners" class="our-partners spacer">
     <div class="title-and-description text-center">
       <h3 class="title">Our Partners</h3>
     </div>

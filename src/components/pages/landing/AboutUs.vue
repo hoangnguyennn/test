@@ -13,83 +13,88 @@ import mapImg from '~/assets/images/pin_map.png'
 </script>
 
 <template>
-  <div id="about-us" class="about-us spacer-48">
-    <div class="title-and-description">
-      <h3 class="title">About Us</h3>
-      <p class="description">
-        Browse our selection of free online games and have a great time without
-        leaving the site! Our Kids Games option also includes game reviews,
-        extensive game cheats and walkthroughs, and much more. We have exclusive
-        free downloads, videos, and articles as well. Etech reviews the most
-        popular kids games from all the most popular video gaming platforms, so
-        you don’t need to search around for fun anywhere else on the Internet.
-        Explore a whole new world of gaming on Etech.
-      </p>
-    </div>
-
-    <div class="statistics">
-      <div class="statistic">
-        <div class="title">
-          <span>600</span>
-          <span>M</span>
-          <span>+</span>
+  <div id="about-us" class="about-us spacer">
+    <div class="statistics-and-benefit-box">
+      <div class="statistics-box">
+        <div class="title-and-description">
+          <h3 class="title">About Us</h3>
+          <p class="description">
+            Browse our selection of free online games and have a great time
+            without leaving the site! Our Kids Games option also includes game
+            reviews, extensive game cheats and walkthroughs, and much more. We
+            have exclusive free downloads, videos, and articles as well. Etech
+            reviews the most popular kids games from all the most popular video
+            gaming platforms, so you don’t need to search around for fun
+            anywhere else on the Internet. Explore a whole new world of gaming
+            on Etech.
+          </p>
         </div>
-        <div class="description">Users</div>
+
+        <div class="statistics">
+          <div class="statistic">
+            <div class="title">
+              <span>600</span>
+              <span>M</span>
+              <span>+</span>
+            </div>
+            <div class="description">Users</div>
+          </div>
+          <div class="statistic">
+            <div class="title">
+              <span>135</span>
+              <span>+</span>
+            </div>
+            <div class="description">Games</div>
+          </div>
+        </div>
       </div>
-      <div class="statistic">
-        <div class="title">
-          <span>135</span>
-          <span>+</span>
-        </div>
-        <div class="description">Games</div>
-      </div>
-    </div>
 
-    <div class="benefits-box">
-      <div class="benefits">
-        <div class="benefit">
-          <div class="icon">
-            <div class="wrap">
-              <CalendarTickIcon />
+      <div class="benefits-box">
+        <div class="benefits">
+          <div class="benefit">
+            <div class="icon">
+              <div class="wrap">
+                <CalendarTickIcon />
+              </div>
+            </div>
+            <div class="text">
+              <div class="title">24 - Hour</div>
+              <div class="content">
+                24/7 access ensures operators' businesses runs smoothly all year
+                long.
+              </div>
             </div>
           </div>
-          <div class="text">
-            <div class="title">24 - Hour</div>
-            <div class="content">
-              24/7 access ensures operators' businesses runs smoothly all year
-              long.
-            </div>
-          </div>
-        </div>
 
-        <div class="benefit">
-          <div class="icon">
-            <div class="wrap">
-              <PenToolIcon />
+          <div class="benefit">
+            <div class="icon">
+              <div class="wrap">
+                <PenToolIcon />
+              </div>
+            </div>
+            <div class="text">
+              <div class="title">Design</div>
+              <div class="content">
+                Combining imaginative universes, play dynamics, and
+                unprecedented gameplay, our games transcend the boundaries of
+                the virtual world by weaving innovative gameplay.
+              </div>
             </div>
           </div>
-          <div class="text">
-            <div class="title">Design</div>
-            <div class="content">
-              Combining imaginative universes, play dynamics, and unprecedented
-              gameplay, our games transcend the boundaries of the virtual world
-              by weaving innovative gameplay.
-            </div>
-          </div>
-        </div>
 
-        <div class="benefit">
-          <div class="icon">
-            <div class="wrap">
-              <PeopleIcon />
+          <div class="benefit">
+            <div class="icon">
+              <div class="wrap">
+                <PeopleIcon />
+              </div>
             </div>
-          </div>
-          <div class="text">
-            <div class="title">Team</div>
-            <div class="content">
-              Etech is an award-winning, international studio of designers,
-              artists, animators and producers that create content for the
-              biggest names in film and video games.
+            <div class="text">
+              <div class="title">Team</div>
+              <div class="content">
+                Etech is an award-winning, international studio of designers,
+                artists, animators and producers that create content for the
+                biggest names in film and video games.
+              </div>
             </div>
           </div>
         </div>
@@ -218,8 +223,8 @@ import mapImg from '~/assets/images/pin_map.png'
           }
         }
 
-        &:not(:last-child) {
-          margin-bottom: 40px;
+        &:not(:first-child) {
+          margin-top: 40px;
         }
       }
     }
@@ -232,14 +237,134 @@ import mapImg from '~/assets/images/pin_map.png'
       display: flex;
       padding-left: 42px;
       padding-right: 33px;
-
-      position: relative;
       z-index: 1;
+
+      img {
+        width: 100%;
+      }
     }
 
     .map {
       margin-top: -31px;
       display: flex;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .about-us {
+    width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .statistics-and-benefit-box {
+      display: flex;
+      justify-content: space-between;
+
+      .statistics-box,
+      .benefits-box {
+        width: 560px;
+      }
+
+      .title-and-description {
+        padding: 0;
+
+        .title {
+          color: #000;
+          font-family: 'Playfair Display';
+          font-size: 60px;
+          font-weight: 900;
+          line-height: 60px;
+          letter-spacing: 3.6px;
+        }
+
+        .description {
+          margin-top: 40px;
+        }
+      }
+
+      .statistics {
+        margin-top: 79px;
+        padding: 0;
+
+        flex-direction: column;
+
+        .statistic {
+          .title {
+            span:nth-child(2n + 1) {
+              font-size: 80px;
+              line-height: 98px;
+            }
+
+            span:nth-child(2n) {
+              font-size: 40px;
+              line-height: 49px;
+            }
+          }
+
+          &:not(:first-child) {
+            margin-left: 0;
+            margin-top: 39px;
+          }
+        }
+      }
+
+      .benefits-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .benefits {
+          width: 410px;
+          padding: 0;
+
+          .benefit {
+            .icon {
+              width: 74px;
+
+              .wrap {
+                width: 50px;
+                height: 50px;
+              }
+            }
+
+            .text {
+              flex: 1;
+
+              .content {
+                margin-top: 8px;
+              }
+            }
+
+            &:not(:first-child) {
+              margin-top: 42px;
+            }
+          }
+        }
+      }
+    }
+
+    .witch-and-map {
+      padding-top: 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .witch {
+        padding-left: 29px;
+        padding-right: 0;
+        width: 533px;
+      }
+
+      .map {
+        margin-top: -101px;
+        display: flex;
+        width: 100%;
+      }
     }
   }
 }

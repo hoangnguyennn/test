@@ -100,7 +100,7 @@ const ourGames2 = ourGames.slice(6)
 </script>
 
 <template>
-  <div id="games" class="our-games spacer-48">
+  <div id="games" class="our-games spacer">
     <div class="title-and-description text-center">
       <h3 class="title">Our Games</h3>
       <p class="description">
