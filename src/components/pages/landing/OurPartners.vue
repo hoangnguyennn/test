@@ -5,6 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import partner1 from '~/assets/images/partner1.png'
 import partner2 from '~/assets/images/partner2.png'
 import partner3 from '~/assets/images/partner3.png'
@@ -12,6 +13,7 @@ import partner4 from '~/assets/images/partner4.png'
 import partner5 from '~/assets/images/partner5.png'
 import partner6 from '~/assets/images/partner6.png'
 import partner7 from '~/assets/images/partner7.png'
+import useMobile from '~/hooks/useMobile'
 
 const partners = [
   { logo: partner1 },
@@ -22,6 +24,16 @@ const partners = [
   { logo: partner6 },
   { logo: partner7 }
 ]
+
+const { isMobile } = useMobile()
+
+const partnersListWidth = computed(() => {
+  if (isMobile.value) {
+    return `${188 * partners.length + 12 * (partners.length - 1)}px`
+  }
+
+  return `${260 * partners.length + 40 * (partners.length - 1)}px`
+})
 </script>
 
 <template>
@@ -35,7 +47,7 @@ const partners = [
         <div
           class="partners-list"
           :style="{
-            width: `${188 * partners.length + 12 * (partners.length - 1)}px`
+            width: partnersListWidth
           }"
         >
           <div
@@ -72,6 +84,7 @@ const partners = [
 
   .partners {
     margin-top: 40px;
+    width: 100%;
 
     &-wrap {
       width: 100%;
@@ -95,6 +108,48 @@ const partners = [
 
       img {
         height: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .our-partners {
+    padding: 120px 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-and-description {
+      .title {
+        height: 58px;
+        font-size: 60px;
+        line-height: 80px;
+        letter-spacing: 3.6px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .partners {
+      margin-top: 80px;
+
+      &-list {
+        > *:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+
+      .partner-item {
+        width: 260px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+
+        img {
+          height: 100%;
+        }
       }
     }
   }
