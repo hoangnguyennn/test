@@ -16,64 +16,65 @@ import Email from '~/components/common/Email.vue'
 </script>
 
 <template>
-  <div
-    id="contact-us"
-    class="footer"
-    :style="{ backgroundImage: `url(${footerImg})` }"
-  >
-    <div class="logo-and-social-media">
-      <div class="logo">
-        <img :src="logoImg" alt="" />
-      </div>
-      <div class="social-media-list">
-        <div class="social-media">
-          <TwitterIcon />
+  <div id="contact-us" class="footer">
+    <div class="content" :style="{ backgroundImage: `url(${footerImg})` }">
+      <div class="logo-and-social-media">
+        <div class="logo">
+          <img :src="logoImg" alt="" />
         </div>
+        <div class="social-media-list">
+          <div class="social-media">
+            <TwitterIcon />
+          </div>
 
-        <div class="social-media">
-          <FacebookIcon />
-        </div>
+          <div class="social-media">
+            <FacebookIcon />
+          </div>
 
-        <div class="social-media">
-          <LinkedinIcon />
-        </div>
-      </div>
-    </div>
-
-    <div class="address">
-      <div class="title">Address</div>
-
-      <div class="block location-block">
-        <div class="icon">
-          <LocationIcon />
-        </div>
-        <div class="text">
-          <p>Valletta Buildings, South Street, Valletta - VLT 1103 Malta, US</p>
-          <p>
-            20 Phan Dang Luu street, Hai Chau District, Danang city, Vietnam
-          </p>
+          <div class="social-media">
+            <LinkedinIcon />
+          </div>
         </div>
       </div>
 
-      <div class="block address-block">
-        <div class="icon">
-          <MobileIcon />
+      <div class="address">
+        <div class="title">Address</div>
+
+        <div class="block location-block">
+          <div class="icon">
+            <LocationIcon />
+          </div>
+          <div class="text">
+            <p>
+              Valletta Buildings, South Street, Valletta - VLT 1103 Malta, US
+            </p>
+            <p>
+              20 Phan Dang Luu street, Hai Chau District, Danang city, Vietnam
+            </p>
+          </div>
         </div>
-        <div class="text">
-          <p>(+1) 555-0108-000 or (+236) 555-0108</p>
+
+        <div class="block address-block">
+          <div class="icon">
+            <MobileIcon />
+          </div>
+          <div class="text">
+            <p>(+1) 555-0108-000 or (+236) 555-0108</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="subscribe">
-      <div class="title">Subscribe</div>
-      <div class="block">
-        <div class="text">
-          Subscribe to our newsletter and be the first to know about our updates
+      <div class="subscribe">
+        <div class="title">Subscribe</div>
+        <div class="block">
+          <div class="text">
+            Subscribe to our newsletter and be the first to know about our
+            updates
+          </div>
         </div>
-      </div>
 
-      <Email class="news-letter-input" variant="outline" />
+        <Email class="news-letter-input" variant="outline" />
+      </div>
     </div>
 
     <div class="info">
@@ -84,10 +85,15 @@ import Email from '~/components/common/Email.vue'
 
 <style scoped lang="scss">
 .footer {
-  background-size: 100% calc(100% - 86px);
-  background-repeat: no-repeat;
-  .logo-and-social-media {
+  .content {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     padding-top: 40px;
+    padding-bottom: 62px;
+  }
+
+  .logo-and-social-media {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -177,7 +183,6 @@ import Email from '~/components/common/Email.vue'
   }
 
   .info {
-    margin-top: 62px;
     height: 86px;
     background-color: #000;
     display: flex;
@@ -188,6 +193,45 @@ import Email from '~/components/common/Email.vue'
       color: #fff;
       font-size: 18px;
       line-height: 126%;
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .footer {
+    .content {
+      background-size: 100% 100%;
+      padding: 104px 230px 100px 230px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .logo-and-social-media {
+        padding-top: 0;
+      }
+
+      .address,
+      .subscribe {
+        margin-top: 0;
+        padding: 0;
+        width: 410px;
+
+        .block {
+          margin-top: 40px;
+        }
+      }
+
+      .address {
+        margin-left: auto;
+      }
+
+      .subscribe {
+        margin-left: 40px;
+      }
+    }
+
+    .info {
+      height: 80px;
     }
   }
 }
