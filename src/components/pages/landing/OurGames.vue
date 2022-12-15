@@ -95,8 +95,10 @@ const ourGames = [
   }
 ]
 
-const ourGames1 = ourGames.slice(0, 6)
-const ourGames2 = ourGames.slice(6)
+const ourGames1 = ourGames.slice(0, 3)
+const ourGames2 = ourGames.slice(3, 6)
+const ourGames3 = ourGames.slice(6, 9)
+const ourGames4 = ourGames.slice(9)
 </script>
 
 <template>
@@ -113,18 +115,36 @@ const ourGames2 = ourGames.slice(6)
 
     <div class="games">
       <div class="column column-1">
-        <CardGame
-          v-for="(game, index) in ourGames1"
-          :key="index"
-          v-bind="game"
-        />
+        <div class="column">
+          <CardGame
+            v-for="(game, index) in ourGames1"
+            :key="index"
+            v-bind="game"
+          />
+        </div>
+        <div class="column">
+          <CardGame
+            v-for="(game, index) in ourGames2"
+            :key="index"
+            v-bind="game"
+          />
+        </div>
       </div>
       <div class="column column-2">
-        <CardGame
-          v-for="(game, index) in ourGames2"
-          :key="index"
-          v-bind="game"
-        />
+        <div class="column">
+          <CardGame
+            v-for="(game, index) in ourGames3"
+            :key="index"
+            v-bind="game"
+          />
+        </div>
+        <div class="column">
+          <CardGame
+            v-for="(game, index) in ourGames4"
+            :key="index"
+            v-bind="game"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -169,16 +189,89 @@ const ourGames2 = ourGames.slice(6)
         justify-content: flex-start;
         margin-left: 16px;
         margin-bottom: 36px;
+        margin-right: 7.5px;
       }
 
       &.column-2 {
         justify-content: flex-end;
         margin-right: 16px;
         margin-top: 36px;
+        margin-left: 7.5px;
       }
 
-      > *:not(:last-child) {
-        margin-bottom: 20px;
+      .column {
+        > *:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .our-games {
+    .title-and-description {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      width: 860px;
+
+      .title {
+        font-size: 60px;
+        line-height: 60px;
+        letter-spacing: 3.6px;
+      }
+
+      .description {
+        margin-top: 24px;
+        color: #757575;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+
+    .games {
+      margin-top: 80px;
+
+      .column {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+
+        &.column-1 {
+          margin-bottom: 0;
+          margin-left: 80px;
+          margin-right: 20px;
+        }
+
+        &.column-2 {
+          margin-top: 0;
+          margin-left: 20px;
+          margin-right: 80px;
+        }
+
+        .column {
+          &:first-child {
+            margin-right: 20px;
+          }
+
+          &:last-child {
+            margin-left: 20px;
+          }
+
+          &:nth-child(2n) {
+            margin-top: 118px;
+          }
+
+          &:nth-child(2n + 1) {
+            margin-bottom: 118px;
+          }
+
+          > *:not(:first-child) {
+            margin-top: 40px;
+          }
+        }
       }
     }
   }

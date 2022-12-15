@@ -34,8 +34,10 @@ const cardGameStyles = computed<StyleValue>(() => {
 
 <style scoped lang="scss">
 .card-game {
-  width: 164px;
   height: 268px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   border-radius: 10px;
   display: flex;
@@ -59,6 +61,34 @@ const cardGameStyles = computed<StyleValue>(() => {
       font-weight: 400;
       line-height: 15px;
       letter-spacing: 0.9px;
+    }
+  }
+}
+
+@media (min-width: 568px) {
+  .card-game {
+    height: 560px;
+
+    .content {
+      padding-bottom: 40px;
+      padding-left: 32px;
+
+      .title {
+        font-size: 48px;
+        line-height: 60px;
+
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: -1px;
+      }
+
+      .description {
+        margin-top: 16px;
+        padding-right: 32px;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: normal;
+      }
     }
   }
 }
