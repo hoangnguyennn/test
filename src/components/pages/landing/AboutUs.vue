@@ -5,11 +5,9 @@ export default {
 </script>
 
 <script setup lang="ts">
-import CalendarTickIcon from '~/assets/images/calendar_tick.svg?component'
-import PenToolIcon from '~/assets/images/pen_tool.svg?component'
-import PeopleIcon from '~/assets/images/people.svg?component'
 import witchImg from '~/assets/images/witch.png'
 import mapImg from '~/assets/images/pin_map.png'
+import { benefits } from '~/constants'
 </script>
 
 <template>
@@ -17,17 +15,8 @@ import mapImg from '~/assets/images/pin_map.png'
     <div class="statistics-and-benefit-box">
       <div class="statistics-box">
         <div class="title-and-description">
-          <h3 class="title">About Us</h3>
-          <p class="description">
-            Browse our selection of free online games and have a great time
-            without leaving the site! Our Kids Games option also includes game
-            reviews, extensive game cheats and walkthroughs, and much more. We
-            have exclusive free downloads, videos, and articles as well. Etech
-            reviews the most popular kids games from all the most popular video
-            gaming platforms, so you don’t need to search around for fun
-            anywhere else on the Internet. Explore a whole new world of gaming
-            on Etech.
-          </p>
+          <h3 class="title">{{ $t('about_us.title') }}</h3>
+          <p class="description">{{ $t('about_us.description') }}</p>
         </div>
 
         <div class="statistics">
@@ -37,64 +26,33 @@ import mapImg from '~/assets/images/pin_map.png'
               <span>M</span>
               <span>+</span>
             </div>
-            <div class="description">Users</div>
+            <div class="description">{{ $t('about_us.users') }}</div>
           </div>
           <div class="statistic">
             <div class="title">
               <span>135</span>
               <span>+</span>
             </div>
-            <div class="description">Games</div>
+            <div class="description">{{ $t('about_us.games') }}</div>
           </div>
         </div>
       </div>
 
       <div class="benefits-box">
         <div class="benefits">
-          <div class="benefit">
+          <div
+            class="benefit"
+            v-for="(benefit, index) in benefits"
+            :key="index"
+          >
             <div class="icon">
               <div class="wrap">
-                <CalendarTickIcon />
+                <component :is="benefit.icon" />
               </div>
             </div>
             <div class="text">
-              <div class="title">24 - Hour</div>
-              <div class="content">
-                24/7 access ensures operators' businesses runs smoothly all year
-                long.
-              </div>
-            </div>
-          </div>
-
-          <div class="benefit">
-            <div class="icon">
-              <div class="wrap">
-                <PenToolIcon />
-              </div>
-            </div>
-            <div class="text">
-              <div class="title">Design</div>
-              <div class="content">
-                Combining imaginative universes, play dynamics, and
-                unprecedented gameplay, our games transcend the boundaries of
-                the virtual world by weaving innovative gameplay.
-              </div>
-            </div>
-          </div>
-
-          <div class="benefit">
-            <div class="icon">
-              <div class="wrap">
-                <PeopleIcon />
-              </div>
-            </div>
-            <div class="text">
-              <div class="title">Team</div>
-              <div class="content">
-                Etech is an award-winning, international studio of designers,
-                artists, animators and producers that create content for the
-                biggest names in film and video games.
-              </div>
+              <div class="title">{{ benefit.title }}</div>
+              <div class="content">{{ benefit.description }}</div>
             </div>
           </div>
         </div>

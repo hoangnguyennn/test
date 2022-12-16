@@ -7,12 +7,11 @@ export default {
 <script setup lang="ts">
 import logoImg from '~/assets/images/logo_mobile.png'
 import footerImg from '~/assets/images/footer_bg.png'
-import TwitterIcon from '~/assets/images/twitter_logo.svg?component'
-import FacebookIcon from '~/assets/images/facebook_logo.svg?component'
-import LinkedinIcon from '~/assets/images/linkedin_logo.svg?component'
 import LocationIcon from '~/assets/images/location.svg?component'
 import MobileIcon from '~/assets/images/mobile.svg?component'
 import Email from '~/components/common/Email.vue'
+
+import { socialMediaList, addresses } from '~/constants'
 </script>
 
 <template>
@@ -23,16 +22,12 @@ import Email from '~/components/common/Email.vue'
           <img :src="logoImg" alt="" />
         </div>
         <div class="social-media-list">
-          <div class="social-media">
-            <TwitterIcon />
-          </div>
-
-          <div class="social-media">
-            <FacebookIcon />
-          </div>
-
-          <div class="social-media">
-            <LinkedinIcon />
+          <div
+            class="social-media"
+            v-for="(socialMedia, index) in socialMediaList"
+            :key="index"
+          >
+            <component :is="socialMedia.icon" />
           </div>
         </div>
       </div>
@@ -45,11 +40,8 @@ import Email from '~/components/common/Email.vue'
             <LocationIcon />
           </div>
           <div class="text">
-            <p>
-              Valletta Buildings, South Street, Valletta - VLT 1103 Malta, US
-            </p>
-            <p>
-              20 Phan Dang Luu street, Hai Chau District, Danang city, Vietnam
+            <p v-for="(address, index) in addresses" :key="index">
+              {{ address }}
             </p>
           </div>
         </div>
@@ -59,18 +51,15 @@ import Email from '~/components/common/Email.vue'
             <MobileIcon />
           </div>
           <div class="text">
-            <p>(+1) 555-0108-000 or (+236) 555-0108</p>
+            <p>{{ $t('address.phone') }}</p>
           </div>
         </div>
       </div>
 
       <div class="subscribe">
-        <div class="title">Subscribe</div>
+        <div class="title">{{ $t('subscribe.title') }}</div>
         <div class="block">
-          <div class="text">
-            Subscribe to our newsletter and be the first to know about our
-            updates
-          </div>
+          <div class="text">{{ $t('subscribe.text') }}</div>
         </div>
 
         <Email class="news-letter-input" variant="outline" />

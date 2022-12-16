@@ -39,7 +39,7 @@ const partnersListWidth = computed(() => {
 <template>
   <div id="partners" class="our-partners spacer">
     <div class="title-and-description text-center">
-      <h3 class="title">Our Partners</h3>
+      <h3 class="title">{{ $t('our_partners.title') }}</h3>
     </div>
 
     <div class="partners">

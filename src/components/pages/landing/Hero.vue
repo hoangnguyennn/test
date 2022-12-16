@@ -17,29 +17,10 @@ import MenuIcon from '~/assets/images/menu.svg?component'
 import ongTienImg from '~/assets/images/ong_tien_1.png'
 import TheUSFlagImg from '~/assets/images/us_flag.svg?component'
 import TickIcon from '~/assets/images/tick.svg?component'
-import VietnamFlagImg from '~/assets/images/vietnam_flag.svg?component'
 import useMobile from '~/hooks/useMobile'
+import { menuItems, languages } from '~/constants'
 
 const { isMobile } = useMobile()
-
-const menuItems = [
-  {
-    label: 'About us',
-    link: '#about-us'
-  },
-  {
-    label: 'Games',
-    link: '#games'
-  },
-  {
-    label: 'Partners',
-    link: '#partners'
-  },
-  {
-    label: 'Contact us',
-    link: '#contact-us'
-  }
-]
 
 const isShowMenu = ref(false)
 const isShowLanguageOptions = ref(false)
@@ -102,23 +83,19 @@ watch(isShowMenu, (newValue) => {
                 </div>
               </div>
               <div class="language-options" v-if="isShowLanguageOptions">
-                <div class="option" @click="isShowLanguageOptions = false">
+                <div
+                  v-for="(language, index) in languages"
+                  :key="index"
+                  class="option"
+                  @click="isShowLanguageOptions = false"
+                >
                   <div class="checkbox">
                     <TickIcon />
                   </div>
                   <div class="flag">
-                    <VietnamFlagImg />
+                    <component :is="language.icon"></component>
                   </div>
-                  <div class="name">Vietnamese</div>
-                </div>
-                <div class="option" @click="isShowLanguageOptions = false">
-                  <div class="checkbox">
-                    <TickIcon />
-                  </div>
-                  <div class="flag">
-                    <TheUSFlagImg />
-                  </div>
-                  <div class="name">English</div>
+                  <div class="name">{{ language.label }}</div>
                 </div>
               </div>
             </div>
@@ -146,23 +123,19 @@ watch(isShowMenu, (newValue) => {
                 </div>
               </div>
               <div class="language-options" v-if="isShowLanguageOptions">
-                <div class="option" @click="isShowLanguageOptions = false">
+                <div
+                  v-for="(language, index) in languages"
+                  :key="index"
+                  class="option"
+                  @click="isShowLanguageOptions = false"
+                >
                   <div class="checkbox">
                     <TickIcon />
                   </div>
                   <div class="flag">
-                    <VietnamFlagImg />
+                    <component :is="language.icon"></component>
                   </div>
-                  <div class="name">Vietnamese</div>
-                </div>
-                <div class="option" @click="isShowLanguageOptions = false">
-                  <div class="checkbox">
-                    <TickIcon />
-                  </div>
-                  <div class="flag">
-                    <TheUSFlagImg />
-                  </div>
-                  <div class="name">English</div>
+                  <div class="name">{{ language.label }}</div>
                 </div>
               </div>
             </div>
@@ -187,42 +160,39 @@ watch(isShowMenu, (newValue) => {
 
     <div class="hero-wrap">
       <div class="hero-title">
-        We’re&nbsp;<br v-if="isMobile" />Getting Ready
+        {{ $t('hero.title', { breakline: '' }) }}
       </div>
 
       <div class="hero-countdown">
         <div class="time days">
           <span>30</span>
-          <span>Days</span>
+          <span>{{ $t('hero.countdown.days') }}</span>
         </div>
 
         <span class="time-divider">:</span>
 
         <div class="time hours">
           <span>18</span>
-          <span>Hours</span>
+          <span>{{ $t('hero.countdown.hours') }}</span>
         </div>
 
         <span class="time-divider">:</span>
 
         <div class="time minutes">
           <span>20</span>
-          <span>Minutes</span>
+          <span>{{ $t('hero.countdown.minutes') }}</span>
         </div>
 
         <span class="time-divider">:</span>
 
         <div class="time seconds">
           <span>11</span>
-          <span>Seconds</span>
+          <span>{{ $t('hero.countdown.seconds') }}</span>
         </div>
       </div>
 
       <div class="hero-content">
-        <p class="news-letter-text">
-          We will back to something amazing. Getting the latest updates about
-          our games. Please sign up to our newsletter.
-        </p>
+        <p class="news-letter-text">{{ $t('hero.news_letter.text') }}</p>
         <Email class="news-letter-input" />
       </div>
     </div>
@@ -371,6 +341,7 @@ watch(isShowMenu, (newValue) => {
                   font-weight: 700;
                   font-size: 10px;
                   line-height: 18px;
+                  white-space: nowrap;
                 }
 
                 &:not(:first-child) {
@@ -607,6 +578,7 @@ watch(isShowMenu, (newValue) => {
 
                 .name {
                   margin-left: 4px;
+                  white-space: nowrap;
                 }
 
                 &:not(:first-child) {
