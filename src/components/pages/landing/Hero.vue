@@ -71,12 +71,62 @@ watch(isShowMenu, (newValue) => {
     </div>
 
     <div class="hero-navbar">
+      <!-- for PC -->
       <div class="logo-pc" v-if="!isMobile">
         <LogoPCImg />
       </div>
 
-      <div class="menu-pc" v-if="!isMobile"></div>
+      <div class="menu-pc" v-if="!isMobile">
+        <ul class="menu-nav">
+          <li
+            class="menu-item"
+            v-for="(menuItem, index) in menuItems"
+            :key="index"
+          >
+            <a
+              :href="menuItem.link"
+              class="menu-link"
+              @click="isShowMenu = false"
+            >
+              {{ menuItem.label }}
+            </a>
+          </li>
+          <li class="menu-item">
+            <div class="languages">
+              <div class="placeholder" @click="isShowLanguageOptions = true">
+                <div class="flag">
+                  <TheUSFlagImg />
+                </div>
+                <div class="caret">
+                  <CaretDown />
+                </div>
+              </div>
+              <div class="language-options" v-if="isShowLanguageOptions">
+                <div class="option" @click="isShowLanguageOptions = false">
+                  <div class="checkbox">
+                    <TickIcon />
+                  </div>
+                  <div class="flag">
+                    <VietnamFlagImg />
+                  </div>
+                  <div class="name">Vietnamese</div>
+                </div>
+                <div class="option" @click="isShowLanguageOptions = false">
+                  <div class="checkbox">
+                    <TickIcon />
+                  </div>
+                  <div class="flag">
+                    <TheUSFlagImg />
+                  </div>
+                  <div class="name">English</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
 
+      <!-- for mobile -->
       <div class="logo-mobile" v-if="isMobile">
         <LogoMobileImg />
       </div>
@@ -255,101 +305,105 @@ watch(isShowMenu, (newValue) => {
 
     .menu-mobile {
       display: flex;
-    }
 
-    .menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #fff;
-      z-index: 999;
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 999;
 
-      &-top {
-        padding: 24px 16px;
-        height: 112px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        &-top {
+          padding: 24px 16px;
+          height: 112px;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
 
-        .languages {
-          position: relative;
+          .languages {
+            position: relative;
 
-          .placeholder {
-            width: 80px;
-            height: 40px;
-            border: 1px solid #afafaf;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-
-            .flag,
-            .caret {
+            .placeholder {
+              width: 80px;
+              height: 40px;
+              border: 1px solid #afafaf;
+              border-radius: 8px;
               display: flex;
-              align-items: center;
-            }
-          }
-
-          .language-options {
-            position: absolute;
-            top: 100%;
-            padding-left: 10px;
-            padding-right: 6px;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-
-            .option {
-              display: flex;
+              justify-content: center;
               align-items: center;
               cursor: pointer;
 
-              .checkbox,
-              .flag {
+              .flag,
+              .caret {
                 display: flex;
+                align-items: center;
               }
+            }
 
-              .flag {
-                margin-left: 8px;
-              }
+            .language-options {
+              position: absolute;
+              top: 100%;
+              padding-left: 10px;
+              padding-right: 6px;
+              width: 156px;
+              background: #fff;
+              border: 1px solid #eee;
+              border-radius: 8px;
 
-              .name {
-                margin-left: 4px;
-              }
+              .option {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
 
-              &:not(:first-child) {
-                border-top: 1px solid #c4c4c4;
+                .checkbox,
+                .flag {
+                  display: flex;
+                }
+
+                .flag {
+                  margin-left: 8px;
+                }
+
+                .name {
+                  margin-left: 4px;
+                  font-weight: 700;
+                  font-size: 10px;
+                  line-height: 18px;
+                }
+
+                &:not(:first-child) {
+                  border-top: 1px solid #c4c4c4;
+                }
               }
             }
           }
         }
-      }
 
-      &-content {
-        display: flex;
-        flex-direction: column;
-        padding: 0 16px;
-      }
+        &-content {
+          display: flex;
+          flex-direction: column;
+          padding: 0 16px;
+        }
 
-      &-item {
-        height: 66px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        &-item {
+          height: 66px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-        color: #000;
+          color: #000;
 
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 18px;
-        text-transform: uppercase;
-        text-decoration: none;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 18px;
+          text-transform: uppercase;
+          text-decoration: none;
 
-        &:not(:last-child) {
-          border-bottom: 1px solid #eee;
+          &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+          }
         }
       }
     }
@@ -491,6 +545,77 @@ watch(isShowMenu, (newValue) => {
       .logo-pc {
         height: 64px;
         margin-top: 20px;
+      }
+
+      .menu-pc {
+        margin-top: 40px;
+        width: 710px;
+        height: 40px;
+
+        .menu-nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .menu-item {
+            .menu-link {
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+
+          .languages {
+            position: relative;
+
+            .placeholder {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 68px;
+              height: 40px;
+              color: #fff;
+
+              .flag,
+              .caret {
+                display: flex;
+              }
+            }
+
+            .language-options {
+              position: absolute;
+              top: calc(100% + 1px);
+              right: 7px;
+              padding-left: 10px;
+              padding-right: 6px;
+              background: #fff;
+              border: 1px solid #eee;
+              border-radius: 8px;
+
+              .option {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                .checkbox,
+                .flag {
+                  display: flex;
+                }
+
+                .flag {
+                  margin-left: 8px;
+                }
+
+                .name {
+                  margin-left: 4px;
+                }
+
+                &:not(:first-child) {
+                  border-top: 1px solid #c4c4c4;
+                }
+              }
+            }
+          }
+        }
       }
     }
 
