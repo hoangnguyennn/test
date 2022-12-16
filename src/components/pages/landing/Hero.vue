@@ -137,8 +137,7 @@ watch(isShowMenu, (newValue) => {
 
     <div class="hero-wrap">
       <div class="hero-title">
-        We’re&nbsp;<br v-if="isMobile" />
-        Getting Ready
+        We’re&nbsp;<br v-if="isMobile" />Getting Ready
       </div>
 
       <div class="hero-countdown">
@@ -504,24 +503,28 @@ watch(isShowMenu, (newValue) => {
     }
 
     &-title {
+      width: 860px;
       font-size: 80px;
       line-height: 120px;
     }
 
     &-countdown {
       margin-top: 21px;
+      padding: 26px 39px;
       width: 756px;
+      height: 150px;
 
       .time {
-        width: 54px;
+        width: 79px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         span:nth-child(1) {
-          height: 80px;
+          height: 79px;
           font-size: 60px;
           line-height: 64px;
+          letter-spacing: 4.8px;
         }
 
         span:nth-child(2) {
@@ -532,7 +535,7 @@ watch(isShowMenu, (newValue) => {
         }
 
         &:last-child {
-          margin-right: 3px;
+          margin-right: 0;
         }
 
         &-divider {

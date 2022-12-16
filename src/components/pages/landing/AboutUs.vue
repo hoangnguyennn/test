@@ -295,14 +295,15 @@ import mapImg from '~/assets/images/pin_map.png'
 
         .statistic {
           .title {
-            span:nth-child(2n + 1) {
-              font-size: 80px;
-              line-height: 98px;
-            }
-
             span:nth-child(2n) {
               font-size: 40px;
               line-height: 49px;
+            }
+
+            span:first-child,
+            span:last-child {
+              font-size: 80px;
+              line-height: 98px;
             }
           }
 
@@ -335,6 +336,10 @@ import mapImg from '~/assets/images/pin_map.png'
             .text {
               flex: 1;
 
+              .title {
+                height: 29px;
+              }
+
               .content {
                 margin-top: 8px;
               }
@@ -355,9 +360,11 @@ import mapImg from '~/assets/images/pin_map.png'
       align-items: center;
 
       .witch {
-        padding-left: 29px;
+        margin-left: 29px;
+        padding-left: 0;
         padding-right: 0;
         width: 533px;
+        height: 437px;
       }
 
       .map {

@@ -72,6 +72,7 @@ const cardGameStyles = computed<StyleValue>(() => {
     .content {
       padding-bottom: 40px;
       padding-left: 32px;
+      padding-right: 32px;
 
       .title {
         font-size: 48px;
@@ -84,7 +85,6 @@ const cardGameStyles = computed<StyleValue>(() => {
 
       .description {
         margin-top: 16px;
-        padding-right: 32px;
         font-size: 14px;
         line-height: 20px;
         letter-spacing: normal;
