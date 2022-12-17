@@ -6,7 +6,7 @@ export default {
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import ArrowDownIcon from '~/assets/images/arrow_down.svg?component'
+import arrowDownIcon from '~/assets/images/arrow_down.png'
 
 const currentPositionY = ref(0)
 const scrollClass = ref('')
@@ -51,7 +51,7 @@ onUnmounted(() => {
 <template>
   <div class="back-to-top" ref="backToTopRef">
     <div class="wrap" :class="scrollClass">
-      <ArrowDownIcon />
+      <img :src="arrowDownIcon" alt="" />
     </div>
   </div>
 </template>
@@ -83,7 +83,7 @@ onUnmounted(() => {
 
     transition: transform 0.3s linear;
 
-    :deep(svg) {
+    img {
       margin-top: 4px;
     }
 

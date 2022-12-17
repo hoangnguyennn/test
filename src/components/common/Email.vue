@@ -65,6 +65,7 @@ const props = withDefaults(defineProps<PropTypes>(), {
     }
 
     :deep(svg) {
+      right: 14px;
       color: #fff;
     }
   }

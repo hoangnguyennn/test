@@ -148,26 +148,6 @@ import { socialMediaList, addresses } from '~/constants'
     .news-letter-input {
       margin-top: 4.27vw;
       position: relative;
-
-      input {
-        padding: 4.8vw 10.13vw 4.8vw 3.73vw;
-        width: 100%;
-        height: 14.93vw;
-        background-color: transparent;
-        color: #545454;
-        font-size: 3.73vw;
-        font-weight: 400;
-        line-height: 5.33vw;
-        border: 1px solid #ffffff;
-        border-radius: 2.13vw;
-      }
-
-      :deep(svg) {
-        position: absolute;
-        right: 3.73vw;
-        top: 50%;
-        transform: translateY(-50%);
-      }
     }
   }
 
@@ -181,7 +161,7 @@ import { socialMediaList, addresses } from '~/constants'
     p {
       color: #fff;
       font-size: 18px;
-      line-height: 126%;
+      line-height: 23px;
     }
   }
 }

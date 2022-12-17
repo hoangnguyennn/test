@@ -8,7 +8,7 @@ export default {
 import { computed, ref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
-import CaretDown from '~/assets/images/caret_down.svg?component'
+import caretDown from '~/assets/images/caret_down.png'
 import TickIcon from '~/assets/images/tick.svg?component'
 import { ILanguage, Nullable } from '~/interfaces'
 
@@ -79,7 +79,7 @@ watch(
         <img v-if="flag" :src="flag" alt="" />
       </div>
       <div class="language__placeholder--caret">
-        <CaretDown />
+        <img :src="caretDown" alt="" />
       </div>
     </div>
 

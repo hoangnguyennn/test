@@ -9,8 +9,8 @@ import { computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import heroImg from '~/assets/images/hero_bg.jfif'
-import LogoMobileImg from '~/assets/images/logo_mobile.svg?component'
-import LogoPCImg from '~/assets/images/logo.svg?component'
+import logoMobileImg from '~/assets/images/logo_mobile.png'
+import logoPCImg from '~/assets/images/logo.png'
 import ongTienImg from '~/assets/images/ong_tien_1.png'
 
 import { menuItems, languages } from '~/constants'
@@ -68,8 +68,7 @@ watch(
 
     <div class="hero__navbar">
       <div :class="isMobile ? 'logo-mobile' : 'logo-pc'">
-        <LogoMobileImg v-if="isMobile" />
-        <LogoPCImg v-else />
+        <img :src="isMobile ? logoMobileImg : logoPCImg" alt="" />
       </div>
 
       <Menu v-if="isMobile" :items="menuItemsComputed">
@@ -184,6 +183,10 @@ watch(
 
     .logo-mobile {
       height: 10.67vw;
+
+      img {
+        height: 100%;
+      }
     }
   }
 
@@ -196,14 +199,16 @@ watch(
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
   }
 
   &__wrap &__title {
     color: #fff;
     font-family: 'Playfair Display', serif;
-    font-size: 10.67vw;
+    font-size: 40px;
     font-weight: 900;
-    line-height: 13.33vw;
+    line-height: 50px;
     text-align: center;
     letter-spacing: 0.6px;
   }

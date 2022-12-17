@@ -67,14 +67,10 @@ const spaceBetween = computed(() => (isMobile.value ? 12 : 40))
         </swiper>
       </div>
       <div class="partner__control partner__control--prev">
-        <div class="icon-wrap">
-          <img :src="arrowSquare" alt="" />
-        </div>
+        <img :src="arrowSquare" alt="" />
       </div>
       <div class="partner__control partner__control--next">
-        <div class="icon-wrap">
-          <img :src="arrowSquare" alt="" />
-        </div>
+        <img :src="arrowSquare" alt="" />
       </div>
     </div>
   </div>
@@ -103,6 +99,8 @@ const spaceBetween = computed(() => (isMobile.value ? 12 : 40))
     cursor: pointer;
     width: 10.67vw;
     height: 10.67vw;
+
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 
     &--prev {
       left: 0;

@@ -70,9 +70,9 @@ const ourGames4 = games.slice(9)
     .title {
       height: 15.73vw;
       font-family: 'Playfair Display';
-      font-size: 10.67vw;
+      font-size: 10px;
       font-weight: 900;
-      line-height: 13.33vw;
+      line-height: 50px;
       letter-spacing: 0.6px;
       color: #000000;
     }
@@ -80,9 +80,9 @@ const ourGames4 = games.slice(9)
     .description {
       margin-top: 4.27vw;
       color: #757575;
-      font-size: 3.73vw;
+      font-size: 14px;
       font-weight: 400;
-      line-height: 5.33vw;
+      line-height: 20px;
     }
   }
 

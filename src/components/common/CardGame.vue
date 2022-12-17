@@ -49,17 +49,17 @@ const cardGameStyles = computed<StyleValue>(() => {
     padding-left: 2.13vw;
 
     .title {
-      font-size: 6.4vw;
+      font-size: 24px;
       font-weight: 700;
-      line-height: 8vw;
+      line-height: 30px;
     }
 
     .description {
       margin-top: 0.8vw;
       padding-right: 4.8vw;
-      font-size: 3.2vw;
+      font-size: 12px;
       font-weight: 400;
-      line-height: 4vw;
+      line-height: 15px;
       letter-spacing: 0.9px;
     }
   }
