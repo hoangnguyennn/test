@@ -99,13 +99,14 @@ watch(
 
       <Countdown
         class="hero__countdown"
-        :finish-time="new Date(2022, 11, 18)"
+        :finish-time="new Date(2023, 0, 18)"
         :is-mobile="isMobile"
       />
 
       <div class="hero__content">
         <NewsLetter
           :content="$t('hero.news_letter.text')"
+          :placeholder="$t('hero.news_letter.placeholder')"
           :is-mobile="isMobile"
         />
       </div>
@@ -119,7 +120,7 @@ watch(
 
 <style scoped lang="scss">
 .hero {
-  height: 824px;
+  height: 219.73vw;
   position: relative;
 
   .background {
@@ -127,13 +128,13 @@ watch(
     top: 0;
     left: 0;
     right: 0;
-    height: 608px;
+    height: 162.13vw;
     z-index: -1;
     overflow: hidden;
 
     .layer-1 {
       width: 100%;
-      height: 608px;
+      height: 162.13vw;
       overflow: hidden;
       background: radial-gradient(
         27.72% 27.79% at 50.81% 68.15%,
@@ -148,8 +149,8 @@ watch(
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 3000px;
-        height: 3000px;
+        width: 800vw;
+        height: 800vw;
         border-radius: 50%;
         overflow: hidden;
         z-index: -1;
@@ -159,8 +160,8 @@ watch(
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 1184px;
-          height: 668px;
+          width: 315.73vw;
+          height: 178.13vw;
           background-size: cover;
           background-position: center;
         }
@@ -169,8 +170,8 @@ watch(
   }
 
   &__navbar {
-    padding: 24px 16px;
-    height: 112px;
+    padding: 6.4vw 4.27vw;
+    height: 29.87vw;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -182,7 +183,7 @@ watch(
     );
 
     .logo-mobile {
-      height: 40px;
+      height: 10.67vw;
     }
   }
 
@@ -191,7 +192,7 @@ watch(
   }
 
   &__wrap {
-    padding: 24px 16px 0 16px;
+    padding: 6.4vw 4.27vw 0 4.27vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,41 +201,41 @@ watch(
   &__wrap &__title {
     color: #fff;
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    font-size: 10.67vw;
     font-weight: 900;
-    line-height: 50px;
+    line-height: 13.33vw;
     text-align: center;
     letter-spacing: 0.6px;
   }
 
   &__wrap &__countdown {
-    margin-top: 38px;
+    margin-top: 10.13vw;
   }
 
   &__wrap &__content {
-    margin-top: 40px;
+    margin-top: 10.67vw;
   }
 
   &__fairy {
-    margin-top: 11px;
-    margin-left: 17px;
-    margin-right: 16px;
-    height: 258px;
+    margin-top: 2.93vw;
+    margin-left: 4.53vw;
+    margin-right: 4.27vw;
+    height: 68.8vw;
     position: relative;
     display: flex;
     overflow: hidden;
 
     img {
       position: absolute;
-      left: 39px;
-      bottom: -14px;
-      width: 351px;
-      height: 351px;
+      left: 10.4vw;
+      bottom: -3.73vw;
+      width: 93.6vw;
+      height: 93.6vw;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   .hero {
     height: 1018px;
 
@@ -290,7 +291,7 @@ watch(
       width: 560px;
     }
 
-    &-fairy {
+    &__fairy {
       margin: 0;
       width: 938px;
       height: 938px;

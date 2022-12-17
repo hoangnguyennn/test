@@ -64,30 +64,30 @@ const ourGames4 = games.slice(9)
 <style scoped lang="scss">
 .our-games {
   .title-and-description {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 4.27vw;
+    padding-right: 4.27vw;
 
     .title {
-      height: 59px;
+      height: 15.73vw;
       font-family: 'Playfair Display';
-      font-size: 40px;
+      font-size: 10.67vw;
       font-weight: 900;
-      line-height: 50px;
+      line-height: 13.33vw;
       letter-spacing: 0.6px;
       color: #000000;
     }
 
     .description {
-      margin-top: 16px;
+      margin-top: 4.27vw;
       color: #757575;
-      font-size: 14px;
+      font-size: 3.73vw;
       font-weight: 400;
-      line-height: 20px;
+      line-height: 5.33vw;
     }
   }
 
   .games {
-    margin-top: 40px;
+    margin-top: 10.67vw;
     display: flex;
     justify-content: space-between;
 
@@ -98,32 +98,32 @@ const ourGames4 = games.slice(9)
 
       &.column-1 {
         justify-content: flex-start;
-        margin-left: 16px;
-        margin-bottom: 36px;
-        margin-right: 7.5px;
+        margin-left: 4.27vw;
+        margin-bottom: 9.6vw;
+        margin-right: 2vw;
       }
 
       &.column-2 {
         justify-content: flex-end;
-        margin-right: 16px;
-        margin-top: 36px;
-        margin-left: 7.5px;
+        margin-right: 4.27vw;
+        margin-top: 9.6vw;
+        margin-left: 2vw;
       }
 
       .column {
         &:nth-child(2n) {
-          margin-top: 20px;
+          margin-top: 5.33vw;
         }
 
         > *:not(:first-child) {
-          margin-top: 20px;
+          margin-top: 5.33vw;
         }
       }
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   .our-games {
     .title-and-description {
       margin-left: auto;

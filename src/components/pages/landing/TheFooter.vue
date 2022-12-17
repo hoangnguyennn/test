@@ -78,8 +78,8 @@ import { socialMediaList, addresses } from '~/constants'
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 40px;
-    padding-bottom: 62px;
+    padding-top: 10.67vw;
+    padding-bottom: 16.53vw;
   }
 
   .logo-and-social-media {
@@ -110,9 +110,9 @@ import { socialMediaList, addresses } from '~/constants'
 
   .address,
   .subscribe {
-    margin-top: 68px;
-    padding-left: 16px;
-    padding-right: 16px;
+    margin-top: 18.13vw;
+    padding-left: 4.27vw;
+    padding-right: 4.27vw;
     color: #fff;
 
     .title {
@@ -146,25 +146,25 @@ import { socialMediaList, addresses } from '~/constants'
     }
 
     .news-letter-input {
-      margin-top: 16px;
+      margin-top: 4.27vw;
       position: relative;
 
       input {
-        padding: 18px 38px 18px 14px;
+        padding: 4.8vw 10.13vw 4.8vw 3.73vw;
         width: 100%;
-        height: 56px;
+        height: 14.93vw;
         background-color: transparent;
         color: #545454;
-        font-size: 14px;
+        font-size: 3.73vw;
         font-weight: 400;
-        line-height: 20px;
+        line-height: 5.33vw;
         border: 1px solid #ffffff;
-        border-radius: 8px;
+        border-radius: 2.13vw;
       }
 
       :deep(svg) {
         position: absolute;
-        right: 14px;
+        right: 3.73vw;
         top: 50%;
         transform: translateY(-50%);
       }
@@ -172,7 +172,7 @@ import { socialMediaList, addresses } from '~/constants'
   }
 
   .info {
-    height: 86px;
+    height: 22.93vw;
     background-color: #000;
     display: flex;
     justify-content: center;
@@ -186,7 +186,7 @@ import { socialMediaList, addresses } from '~/constants'
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   .footer {
     .content {
       background-size: 100% 100%;

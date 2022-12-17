@@ -82,23 +82,27 @@ const spaceBetween = computed(() => (isMobile.value ? 12 : 40))
 
 <style scoped lang="scss">
 .our-partners {
-  padding: 40px 16px;
+  padding: 10.67vw 4.27vw;
   background-color: #f6f6f6;
 }
 
 .partner {
   &__container {
-    margin-top: 40px;
+    margin-top: 10.67vw;
     width: 100%;
     position: relative;
   }
 
   &__container &__control {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     z-index: 99;
     cursor: pointer;
+    width: 10.67vw;
+    height: 10.67vw;
 
     &--prev {
       left: 0;
@@ -117,8 +121,8 @@ const spaceBetween = computed(() => (isMobile.value ? 12 : 40))
   }
 
   &__list &__item {
-    width: 188px;
-    height: 72px;
+    width: 50.13vw;
+    height: 19.2vw;
     display: flex;
     justify-content: center;
 
@@ -129,7 +133,7 @@ const spaceBetween = computed(() => (isMobile.value ? 12 : 40))
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   .our-partners {
     padding: 120px 230px;
     display: flex;
@@ -147,25 +151,21 @@ const spaceBetween = computed(() => (isMobile.value ? 12 : 40))
         text-align: center;
       }
     }
+  }
 
-    .partners {
+  .partner {
+    &__container {
       margin-top: 80px;
+    }
 
-      &-list {
-        > *:not(:last-child) {
-          margin-right: 40px;
-        }
-      }
+    &__list &__item {
+      width: 260px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
 
-      .partner-item {
-        width: 260px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-
-        img {
-          height: 100%;
-        }
+      img {
+        height: 100%;
       }
     }
   }

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "9.7.0",
     "pinia": "2.0.28",
     "pinia-plugin-persistedstate": "3.0.1",
     "sass": "1.56.2",

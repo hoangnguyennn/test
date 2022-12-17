@@ -24,17 +24,26 @@ const handleScroll = () => {
   currentPositionY.value = window.scrollY
 }
 
+const scrollTo = () => {
+  const scrollTop = document.documentElement.scrollTop
+  scrollTop ? scrollToTop() : scrollToBottom()
+}
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
+const scrollToBottom = () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+}
+
 onMounted(() => {
-  backToTopRef.value?.addEventListener('click', scrollToTop)
+  backToTopRef.value?.addEventListener('click', scrollTo)
   document.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
-  backToTopRef.value?.removeEventListener('click', scrollToTop)
+  backToTopRef.value?.removeEventListener('click', scrollTo)
   document.removeEventListener('scroll', handleScroll)
 })
 </script>

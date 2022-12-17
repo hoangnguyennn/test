@@ -4,7 +4,7 @@ const isMobile = ref(false)
 
 const handleResize = () => {
   const vw = document.documentElement.clientWidth || 0
-  isMobile.value = vw < 768
+  isMobile.value = vw < 1160
 }
 
 const useMobile = () => {

@@ -167,12 +167,12 @@ import TitleAndDescription from '~/components/common/TitleAndDescription.vue'
   }
 
   .witch-and-map {
-    padding-top: 40px;
+    padding-top: 10.67vw;
 
     .witch {
       display: flex;
-      padding-left: 42px;
-      padding-right: 33px;
+      padding-left: 11.2vw;
+      padding-right: 8.8vw;
       z-index: 1;
 
       img {
@@ -181,7 +181,7 @@ import TitleAndDescription from '~/components/common/TitleAndDescription.vue'
     }
 
     .map {
-      margin-top: -31px;
+      margin-top: -8.27vw;
       display: flex;
 
       img {
@@ -191,7 +191,7 @@ import TitleAndDescription from '~/components/common/TitleAndDescription.vue'
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   .about-us {
     width: 1160px;
     margin-left: auto;

@@ -12,8 +12,8 @@
   }
 
   &__bar &__actions {
-    padding: 24px 16px;
-    height: 112px;
+    padding: 6.4vw 4.27vw;
+    height: 29.87vw;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -22,18 +22,18 @@
   &__bar &__nav {
     display: flex;
     flex-direction: column;
-    padding: 0 16px;
+    padding: 0 4.27vw;
   }
 
   &__bar &__nav &__item {
-    height: 66px;
+    height: 17.6vw;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000;
-    font-size: 14px;
+    font-size: 3.73vw;
     font-weight: bold;
-    line-height: 18px;
+    line-height: 4.8vw;
     text-transform: uppercase;
 
     &:not(:first-child) {

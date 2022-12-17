@@ -12,3 +12,7 @@ export const durationToObject = (duration: number): IDate => {
 
   return { days, hours, minutes, seconds }
 }
+
+export const to2Digits = (number: number) => {
+  return `00${number}`.slice(-2)
+}

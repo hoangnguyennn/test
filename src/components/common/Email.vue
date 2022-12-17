@@ -17,15 +17,15 @@ const VARIANTS: { [variant: string]: string } = {
   outline: 'outline'
 }
 
-const { variant, placeholder } = withDefaults(defineProps<PropTypes>(), {
+const props = withDefaults(defineProps<PropTypes>(), {
   variant: 'white',
   placeholder: 'Enter your email'
 })
 </script>
 
 <template>
-  <div class="email" :class="{ [variant]: VARIANTS[variant] }">
-    <input type="email" :placeholder="placeholder" />
+  <div class="email" :class="{ [props.variant]: VARIANTS[props.variant] }">
+    <input type="email" :placeholder="props.placeholder" />
     <ArrowRightIcon />
   </div>
 </template>

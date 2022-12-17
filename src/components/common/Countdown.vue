@@ -8,7 +8,7 @@ export default {
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { ONE_SECOND } from '~/constants'
 import { Nullable } from '~/interfaces'
-import { durationToObject } from '~/utils'
+import { durationToObject, to2Digits } from '~/utils'
 
 interface PropTypes {
   finishTime: Date | string | number
@@ -75,22 +75,22 @@ watch(
       <span>{{ durationObject.days }}</span>
       <span>{{ $t('hero.countdown.days') }}</span>
     </div>
-    <div :class="`${prefixClass}__divider`"></div>
+    <div :class="`${prefixClass}__divider`">:</div>
 
     <div :class="`${prefixClass}__time`">
-      <span>{{ durationObject.hours }}</span>
+      <span>{{ to2Digits(durationObject.hours) }}</span>
       <span>{{ $t('hero.countdown.hours') }}</span>
     </div>
-    <div :class="`${prefixClass}__divider`"></div>
+    <div :class="`${prefixClass}__divider`">:</div>
 
     <div :class="`${prefixClass}__time`">
-      <span>{{ durationObject.minutes }}</span>
+      <span>{{ to2Digits(durationObject.minutes) }}</span>
       <span>{{ $t('hero.countdown.minutes') }}</span>
     </div>
-    <div :class="`${prefixClass}__divider`"></div>
+    <div :class="`${prefixClass}__divider`">:</div>
 
     <div :class="`${prefixClass}__time`">
-      <span>{{ durationObject.seconds }}</span>
+      <span>{{ to2Digits(durationObject.seconds) }}</span>
       <span>{{ $t('hero.countdown.seconds') }}</span>
     </div>
   </div>

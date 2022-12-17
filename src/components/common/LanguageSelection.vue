@@ -6,9 +6,10 @@ export default {
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+
 import CaretDown from '~/assets/images/caret_down.svg?component'
 import TickIcon from '~/assets/images/tick.svg?component'
-import { languages } from '~/constants'
 import { ILanguage, Nullable } from '~/interfaces'
 
 interface PropTypes {
@@ -31,6 +32,11 @@ const emit = defineEmits(['update:modelValue'])
 
 const localValue = ref<Nullable<string>>(null)
 const isShowDropdown = ref(false)
+const languageSelectionRef = ref(null)
+
+onClickOutside(languageSelectionRef, () => {
+  isShowDropdown.value = false
+})
 
 const flag = computed(() => {
   const selected = props.items.find((item) => item.value === localValue.value)
@@ -64,8 +70,11 @@ watch(
 </script>
 
 <template>
-  <div class="language__selection">
-    <div class="language__placeholder" @click="isShowDropdown = true">
+  <div class="language__selection" ref="languageSelectionRef">
+    <div
+      class="language__placeholder"
+      @click="isShowDropdown = !isShowDropdown"
+    >
       <div class="language__placeholder--flag">
         <img v-if="flag" :src="flag" alt="" />
       </div>

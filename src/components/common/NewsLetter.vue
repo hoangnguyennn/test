@@ -9,6 +9,7 @@ import Email from '~/components/common/Email.vue'
 
 interface PropTypes {
   content: string
+  placeholder: string
   isMobile: boolean
 }
 
@@ -20,6 +21,6 @@ const props = withDefaults(defineProps<PropTypes>(), {
 <template>
   <div class="news-letter" :class="isMobile ? '' : 'pc'">
     <p class="news-letter__content">{{ props.content }}</p>
-    <Email class="news-letter__input" />
+    <Email class="news-letter__input" :placeholder="props.placeholder" />
   </div>
 </template>

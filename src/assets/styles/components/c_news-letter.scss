@@ -1,14 +1,14 @@
 .news-letter {
   &__content {
     color: #fff;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 3.2vw;
+    line-height: 4vw;
     letter-spacing: 0.9px;
     text-align: center;
   }
 
   &__input {
-    margin-top: 16px;
+    margin-top: 4.27vw;
   }
 
   &.pc &__content {

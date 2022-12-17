@@ -12,11 +12,11 @@ interface PropTypes {
   title: string
   description: string
 }
-const { backgroundImage, title, description } = defineProps<PropTypes>()
+const props = defineProps<PropTypes>()
 
 const cardGameStyles = computed<StyleValue>(() => {
-  if (backgroundImage) {
-    return { backgroundImage: `url(${backgroundImage})` }
+  if (props.backgroundImage) {
+    return { backgroundImage: `url(${props.backgroundImage})` }
   }
 
   return {}
@@ -26,46 +26,46 @@ const cardGameStyles = computed<StyleValue>(() => {
 <template>
   <div class="card-game" :style="cardGameStyles">
     <div class="content">
-      <div class="title">{{ title }}</div>
-      <div class="description">{{ description }}</div>
+      <div class="title">{{ props.title }}</div>
+      <div class="description">{{ props.description }}</div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .card-game {
-  height: 268px;
+  height: 71.47vw;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 2.67vw;
   display: flex;
   align-items: flex-end;
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 1.07vw 2.67vw rgba(0, 0, 0, 0.25));
 
   .content {
-    padding-bottom: 11px;
-    padding-left: 8px;
+    padding-bottom: 2.93vw;
+    padding-left: 2.13vw;
 
     .title {
-      font-size: 24px;
+      font-size: 6.4vw;
       font-weight: 700;
-      line-height: 30px;
+      line-height: 8vw;
     }
 
     .description {
-      margin-top: 3px;
-      padding-right: 18px;
-      font-size: 12px;
+      margin-top: 0.8vw;
+      padding-right: 4.8vw;
+      font-size: 3.2vw;
       font-weight: 400;
-      line-height: 15px;
+      line-height: 4vw;
       letter-spacing: 0.9px;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1160px) {
   .card-game {
     height: 560px;
 

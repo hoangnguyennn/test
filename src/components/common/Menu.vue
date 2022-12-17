@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { onUnmounted, ref, watch } from 'vue'
 
 import { IMenuItem } from '~/interfaces'
 import MenuIcon from '~/assets/images/menu.svg?component'
@@ -21,6 +21,10 @@ const props = withDefaults(defineProps<PropTypes>(), {
 
 const isShowMenu = ref(false)
 
+onUnmounted(() => {
+  document.body.style.overflow = 'visible'
+})
+
 watch(isShowMenu, (newValue) => {
   if (newValue) {
     document.body.style.overflow = 'hidden'
@@ -32,7 +36,7 @@ watch(isShowMenu, (newValue) => {
 
 <template>
   <div class="menu">
-    <MenuIcon @click="isShowMenu = true" />
+    <MenuIcon @click="isShowMenu = !isShowMenu" />
 
     <div class="menu__bar" v-if="isShowMenu">
       <div class="menu__actions">
