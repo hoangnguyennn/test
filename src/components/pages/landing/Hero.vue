@@ -119,6 +119,7 @@ watch(
 
 <style scoped lang="scss">
 .hero {
+  padding-top: 29.87vw;
   height: 219.73vw;
   position: relative;
 
@@ -169,6 +170,11 @@ watch(
   }
 
   &__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
     padding: 6.4vw 4.27vw;
     height: 29.87vw;
     display: flex;
