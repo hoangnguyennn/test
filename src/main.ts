@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
 
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 import '~/assets/styles/main.scss'
 
 import App from './App.vue'
