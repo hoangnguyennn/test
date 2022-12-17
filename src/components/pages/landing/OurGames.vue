@@ -94,7 +94,8 @@ const ourGames4 = games.slice(9)
     .column {
       flex: 1;
       display: flex;
-      flex-wrap: wrap;
+
+      flex-direction: column;
 
       &.column-1 {
         justify-content: flex-start;
@@ -153,6 +154,8 @@ const ourGames4 = games.slice(9)
         flex: 1;
         display: flex;
         flex-wrap: wrap;
+
+        flex-direction: row;
 
         &.column-1 {
           margin-bottom: 0;
