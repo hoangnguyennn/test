@@ -249,6 +249,7 @@ watch(
 @media (min-width: 1160px) {
   .hero {
     height: 1018px;
+    padding-top: 162px;
 
     .background {
       height: 100%;
