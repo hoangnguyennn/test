@@ -1,24 +1,21 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
+const isMobile = ref(false)
+
+const handleResize = () => {
+  const vw = document.documentElement.clientWidth || 0
+  isMobile.value = vw < 768
+}
+
 const useMobile = () => {
-  const isMobile = ref(false)
-
-  const handleResize = () => {
-    const vw = Math.max(
-      document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
-    )
-
-    isMobile.value = vw < 568
-  }
-
   onMounted(() => {
     handleResize()
-    document.addEventListener('resize', handleResize)
+    window.removeEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize)
   })
 
   onUnmounted(() => {
-    document.removeEventListener('resize', handleResize)
+    window.removeEventListener('resize', handleResize)
   })
 
   return { isMobile }

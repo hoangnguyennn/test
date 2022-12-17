@@ -7,19 +7,25 @@ export default {
 <script setup lang="ts">
 import ArrowRightIcon from '~/assets/images/arrow_right.svg?component'
 
+interface PropTypes {
+  variant?: string
+  placeholder?: string
+}
+
 const VARIANTS: { [variant: string]: string } = {
   white: 'white',
   outline: 'outline'
 }
 
-const { variant } = defineProps({
-  variant: { default: 'white' }
+const { variant, placeholder } = withDefaults(defineProps<PropTypes>(), {
+  variant: 'white',
+  placeholder: 'Enter your email'
 })
 </script>
 
 <template>
   <div class="email" :class="{ [variant]: VARIANTS[variant] }">
-    <input type="email" placeholder="Enter your email" />
+    <input type="email" :placeholder="placeholder" />
     <ArrowRightIcon />
   </div>
 </template>

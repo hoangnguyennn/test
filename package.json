@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pinia": "2.0.28",
+    "pinia-plugin-persistedstate": "3.0.1",
     "sass": "1.56.2",
     "vite-svg-loader": "3.6.0",
     "vue": "3.2.45",

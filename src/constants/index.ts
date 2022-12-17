@@ -1,6 +1,6 @@
 import i18n from '~/i18n'
-import TheUSFlagImg from '~/assets/images/us_flag.svg?component'
-import VietnamFlagImg from '~/assets/images/vietnam_flag.svg?component'
+import theUSFlagImg from '~/assets/images/us_flag.png'
+import vietnamFlagImg from '~/assets/images/vietnam_flag.png'
 import CalendarTickIcon from '~/assets/images/calendar_tick.svg?component'
 import PenToolIcon from '~/assets/images/pen_tool.svg?component'
 import PeopleIcon from '~/assets/images/people.svg?component'
@@ -19,53 +19,61 @@ import game12Img from '~/assets/images/game12.png'
 import TwitterIcon from '~/assets/images/twitter_logo.svg?component'
 import FacebookIcon from '~/assets/images/facebook_logo.svg?component'
 import LinkedinIcon from '~/assets/images/linkedin_logo.svg?component'
+import { ILanguageTranslation, IMenuItemTranslation } from '~/interfaces'
 
-const { t } = i18n.global
-
-export const menuItems = [
+export const menuItems: IMenuItemTranslation[] = [
   {
-    label: t('menu.about_us'),
+    labelKey: 'menu.about_us',
     link: '#about-us'
   },
   {
-    label: t('menu.games'),
+    labelKey: 'menu.games',
     link: '#games'
   },
   {
-    label: t('menu.partners'),
+    labelKey: 'menu.partners',
     link: '#partners'
   },
   {
-    label: t('menu.contact_us'),
+    labelKey: 'menu.contact_us',
     link: '#contact-us'
   }
 ]
 
-export const languages = [
+export const languageValues = {
+  VIETNAMESE: 'vi',
+  ENGLISH: 'en'
+}
+
+export const DEFAULT_LANGUAGE = languageValues.ENGLISH
+
+export const languages: ILanguageTranslation[] = [
   {
-    label: t('language.vietnamese'),
-    icon: VietnamFlagImg
+    value: languageValues.VIETNAMESE,
+    labelKey: 'language.vietnamese',
+    icon: vietnamFlagImg
   },
   {
-    label: t('language.english'),
-    icon: TheUSFlagImg
+    value: languageValues.ENGLISH,
+    labelKey: 'language.english',
+    icon: theUSFlagImg
   }
 ]
 
 export const benefits = [
   {
-    title: t('about_us.benefits.benefit_1.title'),
-    description: t('about_us.benefits.benefit_1.description'),
+    titleKey: 'about_us.benefits.benefit_1.title',
+    descriptionKey: 'about_us.benefits.benefit_1.description',
     icon: CalendarTickIcon
   },
   {
-    title: t('about_us.benefits.benefit_2.title'),
-    description: t('about_us.benefits.benefit_2.description'),
+    titleKey: 'about_us.benefits.benefit_2.title',
+    descriptionKey: 'about_us.benefits.benefit_2.description',
     icon: PenToolIcon
   },
   {
-    title: t('about_us.benefits.benefit_3.title'),
-    description: t('about_us.benefits.benefit_3.description'),
+    titleKey: 'about_us.benefits.benefit_3.title',
+    descriptionKey: 'about_us.benefits.benefit_3.description',
     icon: PeopleIcon
   }
 ]
@@ -151,4 +159,9 @@ export const socialMediaList = [
   { icon: LinkedinIcon }
 ]
 
-export const addresses = [t('address.address_1'), t('address.address_2')]
+export const addresses = ['address.address_1', 'address.address_2']
+
+export const ONE_SECOND = 1_000 // ms
+export const ONE_MINUTE = 60 * ONE_SECOND
+export const ONE_HOUR = 60 * ONE_MINUTE
+export const ONE_DAY = 24 * ONE_HOUR

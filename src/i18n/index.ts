@@ -6,9 +6,10 @@ import en from './lang/en.json'
 const messages = { vi, en }
 
 const i18n = createI18n({
-  locale: 'vi',
-  fallbackLocale: 'vi',
-  messages
+  locale: 'en',
+  fallbackLocale: 'en',
+  messages,
+  legacy: false
 })
 
 export default i18n

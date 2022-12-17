@@ -41,7 +41,7 @@ import { socialMediaList, addresses } from '~/constants'
           </div>
           <div class="text">
             <p v-for="(address, index) in addresses" :key="index">
-              {{ address }}
+              {{ $t(address) }}
             </p>
           </div>
         </div>
@@ -186,7 +186,7 @@ import { socialMediaList, addresses } from '~/constants'
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .footer {
     .content {
       background-size: 100% 100%;

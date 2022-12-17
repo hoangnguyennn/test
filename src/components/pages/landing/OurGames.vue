@@ -8,6 +8,7 @@ export default {
 import { games } from '~/constants'
 
 import CardGame from '~/components/common/CardGame.vue'
+import TitleAndDescription from '~/components/common/TitleAndDescription.vue'
 
 const ourGames1 = games.slice(0, 3)
 const ourGames2 = games.slice(3, 6)
@@ -17,10 +18,11 @@ const ourGames4 = games.slice(9)
 
 <template>
   <div id="games" class="our-games spacer">
-    <div class="title-and-description text-center">
-      <h3 class="title">{{ $t('our_games.title') }}</h3>
-      <p class="description">{{ $t('our_games.description') }}</p>
-    </div>
+    <TitleAndDescription
+      :title="$t('our_games.title')"
+      :description="$t('our_games.description')"
+      class="text-center"
+    />
 
     <div class="games">
       <div class="column column-1">
@@ -109,6 +111,10 @@ const ourGames4 = games.slice(9)
       }
 
       .column {
+        &:nth-child(2n) {
+          margin-top: 20px;
+        }
+
         > *:not(:first-child) {
           margin-top: 20px;
         }
@@ -117,7 +123,7 @@ const ourGames4 = games.slice(9)
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .our-games {
     .title-and-description {
       margin-left: auto;

@@ -8,32 +8,33 @@ export default {
 import witchImg from '~/assets/images/witch.png'
 import mapImg from '~/assets/images/pin_map.png'
 import { benefits } from '~/constants'
+import TitleAndDescription from '~/components/common/TitleAndDescription.vue'
 </script>
 
 <template>
   <div id="about-us" class="about-us spacer">
     <div class="statistics-and-benefit-box">
       <div class="statistics-box">
-        <div class="title-and-description">
-          <h3 class="title">{{ $t('about_us.title') }}</h3>
-          <p class="description">{{ $t('about_us.description') }}</p>
-        </div>
+        <TitleAndDescription
+          :title="$t('about_us.title')"
+          :description="$t('about_us.description')"
+        />
 
         <div class="statistics">
           <div class="statistic">
-            <div class="title">
+            <div class="statistic__title">
               <span>600</span>
               <span>M</span>
               <span>+</span>
             </div>
-            <div class="description">{{ $t('about_us.users') }}</div>
+            <div class="statistic__description">{{ $t('about_us.users') }}</div>
           </div>
           <div class="statistic">
-            <div class="title">
+            <div class="statistic__title">
               <span>135</span>
               <span>+</span>
             </div>
-            <div class="description">{{ $t('about_us.games') }}</div>
+            <div class="statistic__description">{{ $t('about_us.games') }}</div>
           </div>
         </div>
       </div>
@@ -51,8 +52,8 @@ import { benefits } from '~/constants'
               </div>
             </div>
             <div class="text">
-              <div class="title">{{ benefit.title }}</div>
-              <div class="content">{{ benefit.description }}</div>
+              <div class="title">{{ $t(benefit.titleKey) }}</div>
+              <div class="content">{{ $t(benefit.descriptionKey) }}</div>
             </div>
           </div>
         </div>
@@ -72,29 +73,6 @@ import { benefits } from '~/constants'
 
 <style scoped lang="scss">
 .about-us {
-  .title-and-description {
-    padding-left: 16px;
-    padding-right: 16px;
-
-    .title {
-      height: 59px;
-      font-family: 'Playfair Display';
-      font-size: 40px;
-      font-weight: 900;
-      line-height: 50px;
-      letter-spacing: 0.6px;
-      color: #000000;
-    }
-
-    .description {
-      margin-top: 16px;
-      color: #757575;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
-    }
-  }
-
   .statistics {
     display: flex;
     margin-top: 40px;
@@ -103,7 +81,7 @@ import { benefits } from '~/constants'
     padding-bottom: 40px;
 
     .statistic {
-      .title {
+      &__title {
         font-weight: 700;
         letter-spacing: -1px;
         color: #079bee;
@@ -124,7 +102,7 @@ import { benefits } from '~/constants'
         }
       }
 
-      .description {
+      &__description {
         margin-top: 4px;
         color: #000;
         font-size: 24px;
@@ -213,7 +191,7 @@ import { benefits } from '~/constants'
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .about-us {
     width: 1160px;
     margin-left: auto;

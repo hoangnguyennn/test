@@ -13,6 +13,7 @@ import partner4 from '~/assets/images/partner4.png'
 import partner5 from '~/assets/images/partner5.png'
 import partner6 from '~/assets/images/partner6.png'
 import partner7 from '~/assets/images/partner7.png'
+import TitleAndDescription from '~/components/common/TitleAndDescription.vue'
 import useMobile from '~/hooks/useMobile'
 
 const partners = [
@@ -38,9 +39,10 @@ const partnersListWidth = computed(() => {
 
 <template>
   <div id="partners" class="our-partners spacer">
-    <div class="title-and-description text-center">
-      <h3 class="title">{{ $t('our_partners.title') }}</h3>
-    </div>
+    <TitleAndDescription
+      :title="$t('our_partners.title')"
+      class="text-center"
+    />
 
     <div class="partners">
       <div class="partners-wrap">
@@ -113,7 +115,7 @@ const partnersListWidth = computed(() => {
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .our-partners {
     padding: 120px 230px;
     display: flex;

@@ -65,7 +65,7 @@ const cardGameStyles = computed<StyleValue>(() => {
   }
 }
 
-@media (min-width: 568px) {
+@media (min-width: 768px) {
   .card-game {
     height: 560px;
 

@@ -10,7 +10,7 @@ import ArrowDownIcon from '~/assets/images/arrow_down.svg?component'
 
 const currentPositionY = ref(0)
 const scrollClass = ref('')
-const backToTopRef = ref()
+const backToTopRef = ref<HTMLDivElement>()
 
 const handleScroll = () => {
   if (currentPositionY.value > window.scrollY) {
@@ -24,11 +24,17 @@ const handleScroll = () => {
   currentPositionY.value = window.scrollY
 }
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
 onMounted(() => {
+  backToTopRef.value?.addEventListener('click', scrollToTop)
   document.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
+  backToTopRef.value?.removeEventListener('click', scrollToTop)
   document.removeEventListener('scroll', handleScroll)
 })
 </script>
